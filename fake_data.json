@@ -1,3 +1,33 @@
 {
-    
+    "events":
+    [
+        {
+            "eventName": "Club Meeting",
+            "clubName": "BYU Dev Club",
+            "dateTime": 
+            {
+                "month": 12,
+                "day": 3,
+                "year": 2021,
+                "time": 1930
+            },
+            "location": 
+            {
+                "building": "TNRB",
+                "room": "484"
+            },
+            "food": "Pizza",
+            "description": "So much fun!",
+            "rsvp":
+            {
+                "required": "false",
+                "rsvpInfo": ""
+            },
+            "contactInfo":
+            {
+                "phone": "8018018011",
+                "email": "byudev@devclub.club"
+            }
+        }
+    ]
 }

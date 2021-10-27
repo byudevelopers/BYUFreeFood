@@ -1,6 +1,7 @@
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
+import { AddEventScreen } from './AddEventScreen';
 
 import { styles } from './Styles';
 import { AddEventView } from './screens/AddEvent';

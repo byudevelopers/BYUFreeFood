@@ -3,16 +3,26 @@ A cooperatively developed React Native application built as a club project for e
 
 ## Git Best Practices
 After installing git on your machine run the following in the repository where you want to keep the repo:
+
 (This is just for the first time)
+
 `git clone https://github.com/byudevelopers/BYUFreeFood.git` this downloads the repo
+
 (or if you already have the repository...)
+
 `git pull` while you have the master branch checked out (`git checkout master`) to get the most recent version of the code
 
+
 When you start working on a new feature...
+
 `git checkout -b <branch_name_here>` this creates a new branch. You can make changes here without messing anybody else up.
+
 when you've completed your work...
+
 `git add -p` This will show you all the changes you've made. You confirm whether or not you want to commit these changes by entering 'y'/'n' or 'q' to cancel. Alternatively, you can use `git add .` to stage all these changes for commit.
+
 Next ->
+
 `git commit -m "<Description of your changes>"` This commits to your changes in preparation for pushing.
 
 if (this is your first time pushing) {

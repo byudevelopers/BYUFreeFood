@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { FlatList, Text, View } from "react-native";
 import { Button } from "react-native-elements/dist/buttons/Button";
 import { styles } from "../Styles";
+const customData = require("../fake_data.json");
 
 export function ListView() {
   const [open, setOpen] = useState(false);
@@ -13,22 +14,11 @@ export function ListView() {
   return (
     <View style={styles.listContainer}>
       <FlatList
-        data={[
-          { key: "Devin" },
-          { key: "Dan" },
-          { key: "Dominic" },
-          { key: "Jackson" },
-          { key: "James" },
-          { key: "Joel" },
-          { key: "John" },
-          { key: "Jillian" },
-          { key: "Jimmy" },
-          { key: "Julie" },
-        ]}
+        data={customData}
         renderItem={({ item }) => (
           <View>
             <View style={styles.listDivider} />
-            <Text style={styles.eventListItem}>{item.key}</Text>
+            <Text style={styles.eventListItem}>{item.eventName}</Text>
           </View>
         )}
       />

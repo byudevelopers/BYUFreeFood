@@ -9,6 +9,7 @@ import { createStackNavigator } from '@react-navigation/stack';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { Button } from 'react-native-elements';
 import Icon from 'react-native-vector-icons/FontAwesome';
+import { MapViewPage } from './screens/MapViewPage';
 
 const AppStack = createStackNavigator();
 const HomeTabs = createBottomTabNavigator();
@@ -22,7 +23,7 @@ function Home() {
         options={{ headerShown: false }} />
       <HomeTabs.Screen
         name="Map"
-        component={MapView}
+        component={MapViewPage}
         options={{ headerShown: false }} />
     </HomeTabs.Navigator>
   )
@@ -36,7 +37,7 @@ function ListView() {
 
 function MapView() {
   return (
-    <Text>This is the map view</Text>
+    MapViewPage
   )
 }
 

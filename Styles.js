@@ -1,4 +1,5 @@
 import { StyleSheet } from "react-native";
+import { ScreenHeight, ScreenWidth } from "react-native-elements/dist/helpers";
 
 export const styles = StyleSheet.create({
   container: {
@@ -25,4 +26,18 @@ export const styles = StyleSheet.create({
   dropdown: {
     flex: 1,
   },
+  // list view
+  eventListItem: {
+    padding: 10,
+  },
+  listDivider: {
+    height: 1,
+    width: ScreenWidth,
+    backgroundColor: "#000",
+  },
+  listContainer: {
+    width: ScreenWidth,
+    height: ScreenHeight,
+  },
+  // end list view
 });

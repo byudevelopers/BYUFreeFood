@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { FlatList, Text, View } from "react-native";
+import { Button } from "react-native-elements/dist/buttons/Button";
 import { styles } from "../Styles";
 
 export function ListView() {
@@ -10,8 +11,7 @@ export function ListView() {
     { label: "JFSB", value: "JFSB" },
   ];
   return (
-    <View style={styles.container}>
-      <Text>This is our super cool list view!!!</Text>
+    <View style={styles.listContainer}>
       <FlatList
         data={[
           { key: "Devin" },
@@ -25,7 +25,12 @@ export function ListView() {
           { key: "Jimmy" },
           { key: "Julie" },
         ]}
-        renderItem={({ item }) => <Text style={styles.item}>{item.key}</Text>}
+        renderItem={({ item }) => (
+          <View>
+            <View style={styles.listDivider} />
+            <Text style={styles.eventListItem}>{item.key}</Text>
+          </View>
+        )}
       />
     </View>
   );

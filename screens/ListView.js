@@ -1,7 +1,5 @@
 import React, { useState } from "react";
-import { StyleSheet, Text, View } from "react-native";
-import DropDownPicker from "react-native-dropdown-picker";
-import { TextInput } from "react-native-gesture-handler";
+import { FlatList, Text, View } from "react-native";
 import { styles } from "../Styles";
 
 export function ListView() {
@@ -13,7 +11,22 @@ export function ListView() {
   ];
   return (
     <View style={styles.container}>
-      <Text>This is our super cool list view!</Text>
+      <Text>This is our super cool list view!!!</Text>
+      <FlatList
+        data={[
+          { key: "Devin" },
+          { key: "Dan" },
+          { key: "Dominic" },
+          { key: "Jackson" },
+          { key: "James" },
+          { key: "Joel" },
+          { key: "John" },
+          { key: "Jillian" },
+          { key: "Jimmy" },
+          { key: "Julie" },
+        ]}
+        renderItem={({ item }) => <Text style={styles.item}>{item.key}</Text>}
+      />
     </View>
   );
 }

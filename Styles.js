@@ -29,6 +29,7 @@ export const styles = StyleSheet.create({
   // list view
   eventListItem: {
     padding: 10,
+    backgroundColor: "#5588aa",
   },
   listDivider: {
     height: 1,
@@ -36,8 +37,7 @@ export const styles = StyleSheet.create({
     backgroundColor: "#000",
   },
   listContainer: {
-    width: ScreenWidth,
-    height: ScreenHeight,
+    flex: 1,
   },
   // end list view
 });

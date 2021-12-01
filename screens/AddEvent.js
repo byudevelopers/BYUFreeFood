@@ -2,10 +2,12 @@
 import React, { useState } from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import DropDownPicker from 'react-native-dropdown-picker';
+import { Button } from 'react-native-elements';
 import { TextInput } from 'react-native-gesture-handler';
 import { styles } from '../Styles';
+import { Pressable } from 'react-native';
 
-export function AddEventView() {
+export function AddEventView({ navigation }) {
     const [open, setOpen] = useState(false);
     const [value, setValue] = useState(null);
     const buildings = [
@@ -13,20 +15,13 @@ export function AddEventView() {
       {label: 'JFSB', value: 'JFSB'}
     ]
     return (
-      <View style={styles.container}>
-        <Text style={styles.header}>Create a new event</Text>
-        <View style={styles.rowContainer}>
-          <Text>Event:</Text>
-          <TextInput style={styles.textInput} placeholder="Your event name"/>
-        </View>
-        <View style={styles.rowContainer}>
-          <Text>Organizer:</Text>
-          <TextInput style={styles.textInput} placeholder="Your club/company"/>
-        </View>
-        <View style={styles.rowContainer}>
-          <Text>Date and Time:</Text>
-          <TextInput style={styles.textInput} placeholder="Event time and date"/>
-        </View>
+      <View style={addEventStyles.page}>
+        <TextInput style={[addEventStyles.textInput, addEventStyles.text]} placeholder="Title"/>
+        <TextInput style={[addEventStyles.textInput, addEventStyles.text]} placeholder="Organizer"/>
+        <TextInput style={[addEventStyles.textInput, addEventStyles.text]} placeholder="Food"/>
+        <Pressable style={addEventStyles.locationButton} onPress={() => {
+          navigation.navigate("Location");
+        }}><Text style={addEventStyles.text}>Location</Text></Pressable>
         <View style={styles.rowContainer}>
           <Text>Building:</Text>
           <DropDownPicker
@@ -42,3 +37,23 @@ export function AddEventView() {
       </View>
     )
   }
+
+  const addEventStyles = StyleSheet.create({
+    page: {
+      display: "flex",
+      backgroundColor: "#fff",
+      height: "100%"
+    },
+    textInput: {
+      borderBottomWidth: 1,
+      padding: 8
+    },
+    locationButton: {
+      borderBottomWidth: 1,
+      borderBottomColor: "#000",
+      padding: 8  
+    },
+    text: {
+      fontSize: 18
+    }
+  });

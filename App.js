@@ -1,7 +1,6 @@
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
-import { AddEventScreen } from './AddEventScreen';
 
 import { styles } from './Styles';
 import { AddEventView } from './screens/AddEvent';
@@ -10,6 +9,7 @@ import { createStackNavigator } from '@react-navigation/stack';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { Button } from 'react-native-elements';
 import Icon from 'react-native-vector-icons/FontAwesome';
+import LocationSelection from './screens/LocationSelection';
 
 const AppStack = createStackNavigator();
 const HomeTabs = createBottomTabNavigator();
@@ -61,14 +61,18 @@ export default function App() {
                   />
                 }
                 type='clear'
-                onPress={() => navigation.navigate("AddEvent")}
+                onPress={() => navigation.navigate("New Event")}
               />
             )
           })}
         />
         <AppStack.Screen
-          name="AddEvent"
+          name="New Event"
           component={AddEventView}
+        />
+        <AppStack.Screen
+          name="Location"
+          component={LocationSelection}
         />
       </AppStack.Navigator>
     </NavigationContainer>

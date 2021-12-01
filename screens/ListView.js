@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { FlatList, Text, View, TouchableWithoutFeedback} from "react-native";
+import { FlatList, Text, View, TouchableWithoutFeedback } from "react-native";
 import { Button } from "react-native-elements/dist/buttons/Button";
 import { styles } from "../Styles";
 import { NavigationContainer } from "@react-navigation/native";
@@ -17,7 +17,8 @@ export function ListView() {
       <FlatList
         data={customData}
         renderItem={({ item }) => (
-          <TouchableWithoutFeedback onPress={ () => navigation.navigate("EventDetailView")}>
+          <TouchableWithoutFeedback
+            onPress={() => navigation.navigate("EventDetailView")}>
             <View style={styles.listDivider} />
             <Text style={styles.eventListItem}>{item.eventName}</Text>
           </TouchableWithoutFeedback>

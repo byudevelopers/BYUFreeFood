@@ -35,6 +35,10 @@ else {
 
 Once you are done making your own changes and you are ready to put them in the main branch, go to github.com and open a pull-request from your branch. Get a club officer to review it and they will merge it into the master branch!!
 
+If for some reason you want to reset everything you've done, use the following command.
+THIS WILL ERASE ALL WORK UNTIL THE PREVIOUS GIT PULL
+`git reset HEAD --hard`
+
 DO NOT merge or push to `master` without talking to a club officer!
 
 ## To set up your expo package...

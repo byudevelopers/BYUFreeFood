@@ -1,7 +1,8 @@
 import React, { useState } from "react";
-import { FlatList, Text, View } from "react-native";
+import { FlatList, Text, View, TouchableWithoutFeedback} from "react-native";
 import { Button } from "react-native-elements/dist/buttons/Button";
 import { styles } from "../Styles";
+import { NavigationContainer } from "@react-navigation/native";
 const customData = require("../fake_data.json");
 
 export function ListView() {
@@ -16,10 +17,10 @@ export function ListView() {
       <FlatList
         data={customData}
         renderItem={({ item }) => (
-          <View>
+          <TouchableWithoutFeedback onPress={ () => navigation.navigate("EventDetailView")}>
             <View style={styles.listDivider} />
             <Text style={styles.eventListItem}>{item.eventName}</Text>
-          </View>
+          </TouchableWithoutFeedback>
         )}
       />
     </View>

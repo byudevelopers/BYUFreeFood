@@ -23,6 +23,26 @@ export function MapViewPage(){
         description: "This is the library",
         id: 1
     }
+  const buildings = [
+    {
+      coordinate: {
+        latitude: 40.248630,
+        longitude: -111.649260,
+      },
+      title: "Harold B. Lee Library",
+      description: "This is the library",
+      id: 1
+  },
+  {
+    coordinate: {
+      latitude: 40.248630,
+      longitude: -111.649260,
+    },
+    title: "Harold B. Lee Library",
+    description: "This is the library",
+    id: 1
+}
+  ]
 
   const haroldblibrary = {
     latitude: 40.248630,

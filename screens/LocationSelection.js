@@ -10,7 +10,7 @@ export default function LocationSelection() {
       <View>{
         buildings.map(building => {
           return (
-            <Pressable 
+            <Pressable key={building}
               style={[
                 locationSelectionStyles.buildingButton,
                 selected == building ? locationSelectionStyles.selected : ''

@@ -14,6 +14,7 @@ export function AddEventView({ navigation }) {
       {label: 'TNRB', value: 'TNRB'},
       {label: 'JFSB', value: 'JFSB'}
     ]
+
     return (
       <View style={addEventStyles.page}>
         <TextInput style={[addEventStyles.textInput, addEventStyles.text]} placeholder="Title"/>
@@ -26,18 +27,6 @@ export function AddEventView({ navigation }) {
           multiline={true}
           placeholder="Description"
           style={[addEventStyles.textInput, addEventStyles.text, addEventStyles.descriptionTextBox]}/>
-        <View style={styles.rowContainer}>
-          <Text>Building:</Text>
-          <DropDownPicker
-            placeholder="Choose one"
-            style={styles.dropdown}
-            containerStyle={styles.dropdown}
-            open={open}
-            value={value}
-            items={buildings}
-            setOpen={setOpen}
-            setValue={setValue}/>
-        </View>
       </View>
     )
   }

@@ -17,10 +17,11 @@ export function ListView() {
       <FlatList
         data={customData}
         renderItem={({ item }) => (
-          <TouchableWithoutFeedback
-            onPress={() => navigation.navigate("EventDetailView")}>
-            <View style={styles.listDivider} />
-            <Text style={styles.eventListItem}>{item.eventName}</Text>
+          <TouchableWithoutFeedback onPress={() => console.log("hi")}>
+            <View>
+              <View style={styles.listDivider} />
+              <Text style={styles.eventListItem}>{item.eventName}</Text>
+            </View>
           </TouchableWithoutFeedback>
         )}
       />

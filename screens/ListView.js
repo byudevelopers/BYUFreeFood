@@ -18,12 +18,18 @@ export function ListView() {
         data={customData}
         renderItem={({ item }) => (
           <TouchableWithoutFeedback
-            onPress={() => navigation.navigate("EventDetailView")}>
-            <View style={styles.listDivider} />
-            <Text style={styles.eventListItem}>{item.eventName}</Text>
+            onPress={() => actionOnRow(item)}>
+            <View>
+              <View style={styles.listDivider} />
+              <Text style={styles.eventListItem}>{item.eventName}</Text>
+            </View>
           </TouchableWithoutFeedback>
         )}
       />
     </View>
   );
+}
+
+export function actionOnRow(item){
+  console.log("Selected Item: ", item);
 }

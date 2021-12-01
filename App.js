@@ -2,14 +2,15 @@ import { StatusBar } from "expo-status-bar";
 import React from "react";
 import { FlatList, StyleSheet, Text, View } from "react-native";
 
-import { styles } from "./Styles";
-import { AddEventView } from "./screens/AddEvent";
+import { styles } from './Styles';
+import { AddEventView } from './screens/AddEvent';
 import { ListView } from "./screens/ListView";
-import { NavigationContainer } from "@react-navigation/native";
-import { createStackNavigator } from "@react-navigation/stack";
-import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
-import { Button } from "react-native-elements";
-import Icon from "react-native-vector-icons/FontAwesome";
+import { NavigationContainer } from '@react-navigation/native';
+import { createStackNavigator } from '@react-navigation/stack';
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import { Button } from 'react-native-elements';
+import Icon from 'react-native-vector-icons/FontAwesome';
+import { MapViewPage } from './screens/MapViewPage';
 
 const AppStack = createStackNavigator();
 const HomeTabs = createBottomTabNavigator();
@@ -24,15 +25,16 @@ function Home() {
       />
       <HomeTabs.Screen
         name="Map"
-        component={MapView}
-        options={{ headerShown: false }}
-      />
+        component={MapViewPage}
+        options={{ headerShown: false }} />
     </HomeTabs.Navigator>
   );
 }
 
 function MapView() {
-  return <Text>This is the map view</Text>;
+  return (
+    MapViewPage
+  )
 }
 
 export default function App() {

@@ -54,7 +54,7 @@ If at any time you receive the error:
 `code: 'ERR_OSSL_EVP_UNSUPPORTED'`
 Try:
 `export NODE_OPTIONS=--openssl-legacy-provider`
-However when pushing to get you may receive an error:
+However when pushing to git you may receive an error:
 `--openssl-legacy-provider is not allowed in NODE_OPTIONS`
 Then run the command:
 `unset NODE_OPTIONS`

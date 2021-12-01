@@ -22,6 +22,10 @@ export function AddEventView({ navigation }) {
         <Pressable style={addEventStyles.locationButton} onPress={() => {
           navigation.navigate("Location");
         }}><Text style={addEventStyles.text}>Location</Text></Pressable>
+        <TextInput
+          multiline={true}
+          placeholder="Description"
+          style={[addEventStyles.textInput, addEventStyles.text, addEventStyles.descriptionTextBox]}/>
         <View style={styles.rowContainer}>
           <Text>Building:</Text>
           <DropDownPicker
@@ -55,5 +59,8 @@ export function AddEventView({ navigation }) {
     },
     text: {
       fontSize: 18
+    },
+    descriptionTextBox: {
+      height: "10%",
     }
   });

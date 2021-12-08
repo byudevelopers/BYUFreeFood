@@ -2,10 +2,12 @@ import React, { useState } from "react";
 import { FlatList, Text, View, TouchableWithoutFeedback } from "react-native";
 import { Button } from "react-native-elements/dist/buttons/Button";
 import { styles } from "../Styles";
-import { NavigationContainer } from "@react-navigation/native";
-const customData = require("../fake_data.json");
+import { createStackNavigator } from "@react-navigation/stack";
 
-export function ListView() {
+const customData = require("../fake_data.json");
+const ListStack = createStackNavigator();
+
+export function ListView({ navigation }) {
   const [open, setOpen] = useState(false);
   const [value, setValue] = useState(null);
   const buildings = [
@@ -14,22 +16,22 @@ export function ListView() {
   ];
   return (
     <View style={styles.listContainer}>
-      <FlatList
-        data={customData}
-        renderItem={({ item }) => (
-          <TouchableWithoutFeedback
-            onPress={() => actionOnRow(item)}>
-            <View>
-              <View style={styles.listDivider} />
-              <Text style={styles.eventListItem}>{item.eventName}</Text>
-            </View>
-          </TouchableWithoutFeedback>
-        )}
-      />
+        <FlatList
+          data={customData}
+          renderItem={({ item }) => (
+            <TouchableWithoutFeedback
+              onPress={() => navigation.navigate("EventDetailView")}>
+              <View>
+                <View style={styles.listDivider} />
+                <Text style={styles.eventListItem}>{item.eventName}</Text>
+              </View>
+            </TouchableWithoutFeedback>
+          )}
+        />
     </View>
   );
 }
 
-export function actionOnRow(item){
-  console.log("Selected Item: ", item);
-}
+//export function actionOnRow(item){
+  //console.log("Selected Item: ", item);
+//}

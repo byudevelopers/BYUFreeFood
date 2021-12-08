@@ -10,6 +10,7 @@ import { createStackNavigator } from "@react-navigation/stack";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { Button } from "react-native-elements";
 import Icon from "react-native-vector-icons/FontAwesome";
+import { EventDetailView } from "./screens/EventDetailView";
 
 const AppStack = createStackNavigator();
 const HomeTabs = createBottomTabNavigator();
@@ -55,6 +56,7 @@ export default function App() {
           })}
         />
         <AppStack.Screen name="AddEvent" component={AddEventView} />
+        <AppStack.Screen name="EventDetailView" component={EventDetailView}/>
       </AppStack.Navigator>
     </NavigationContainer>
   );

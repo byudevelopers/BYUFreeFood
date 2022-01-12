@@ -11,6 +11,7 @@ import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { Button } from "react-native-elements";
 import Icon from "react-native-vector-icons/FontAwesome";
 import { EventDetailView } from "./screens/EventDetailView";
+import { MapViewPage } from "./screens/MapViewPage";
 
 const AppStack = createStackNavigator();
 const HomeTabs = createBottomTabNavigator();
@@ -25,7 +26,7 @@ function Home() {
       />
       <HomeTabs.Screen
         name="Map"
-        component={MapView}
+        component={MapViewPage}
         options={{ headerShown: false }}
       />
     </HomeTabs.Navigator>
@@ -33,7 +34,7 @@ function Home() {
 }
 
 function MapView() {
-  return <Text>This is the map view</Text>;
+  return MapViewPage;
 }
 
 export default function App() {
@@ -56,7 +57,7 @@ export default function App() {
           })}
         />
         <AppStack.Screen name="AddEvent" component={AddEventView} />
-        <AppStack.Screen name="EventDetailView" component={EventDetailView}/>
+        <AppStack.Screen name="EventDetailView" component={EventDetailView} />
       </AppStack.Navigator>
     </NavigationContainer>
   );

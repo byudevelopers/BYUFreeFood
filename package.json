@@ -19,6 +19,7 @@
     "react-native-dropdown-picker": "^5.2.3",
     "react-native-elements": "^3.4.2",
     "react-native-gesture-handler": "^1.10.3",
+    "react-native-maps": "0.28.0",
     "react-native-web": "^0.17.5"
   },
   "devDependencies": {

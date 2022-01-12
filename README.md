@@ -39,7 +39,7 @@ DO NOT merge or push to `master` without talking to a club officer!
 
 
 ## To set up your expo package...
-`npm install` If you are missing npm (node package manager), here is a link to install Node https://phoenixnap.com/kb/install-node-js-npm-on-windows
+`npm install` If you are missing npm (node package manager), here is a link with a guide to installing Node: https://phoenixnap.com/kb/install-node-js-npm-on-windows
 
 `npm install --global expo-cli`  (if that doesn't work try `sudo npm install -g expo-cli`
 `expo start` in the repo directory to access developer tools!

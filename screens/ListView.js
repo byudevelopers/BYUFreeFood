@@ -19,22 +19,22 @@ export function ListView() {
 
   return (
     <View style={styles.listContainer}>
-        <FlatList
-          data={customData}
-          renderItem={({ item }) => (
-            <TouchableWithoutFeedback
-              onPress={() => navigation.navigate("EventDetailView")}>
-              <View>
-                <View style={styles.listDivider} />
-                <Text style={styles.eventListItem}>{item.eventName}</Text>
-              </View>
-            </TouchableWithoutFeedback>
-          )}
-        />
+      <FlatList
+        data={customData}
+        renderItem={({ item }) => (
+          <TouchableWithoutFeedback
+            onPress={() => navigation.navigate("EventDetailView", { item })}>
+            <View>
+              <View style={styles.listDivider} />
+              <Text style={styles.eventListItem}>{item.eventName}</Text>
+            </View>
+          </TouchableWithoutFeedback>
+        )}
+      />
     </View>
   );
 }
 
 //export function actionOnRow(item){
-  //console.log("Selected Item: ", item);
+//console.log("Selected Item: ", item);
 //}

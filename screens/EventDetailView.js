@@ -20,8 +20,5 @@ export function EventDetailView(props) {
         {event.location.room} in the {event.location.building}
       </Text>
     </View>
-    // <View>
-    //   <Text>Test 1,2</Text>
-    // </View>
   );
 }

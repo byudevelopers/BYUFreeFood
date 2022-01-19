@@ -8,9 +8,7 @@ export const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "center",
   },
-  header: {
-    fontSize: 26,
-  },
+ 
   rowContainer: {
     display: "flex",
     flexDirection: "row",
@@ -40,4 +38,12 @@ export const styles = StyleSheet.create({
     flex: 1,
   },
   // end list view
+
+  //home header
+  headerStyle: {
+    backgroundColor: '#151561',
+  },
+  headerTitleStyle: {
+      color: 'white',  
+  }
 });

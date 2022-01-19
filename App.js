@@ -13,12 +13,14 @@ import Icon from "react-native-vector-icons/FontAwesome";
 import { EventDetailView } from "./screens/EventDetailView";
 import { MapViewPage } from "./screens/MapViewPage";
 
+
 const AppStack = createStackNavigator();
 const HomeTabs = createBottomTabNavigator();
 
 function Home() {
   return (
     <HomeTabs.Navigator>
+      
       <HomeTabs.Screen
         name="List"
         component={ListView}
@@ -46,10 +48,12 @@ export default function App() {
           component={Home}
           options={({ navigation }) => ({
             headerTitle: "BYUFreeFood",
+            headerStyle: styles.headerStyle,
+            headerTitleStyle: styles.headerTitleStyle,
             headerRight: () => (
               <Button
                 style={styles.headerButton}
-                icon={<Icon name="plus" size={24} color="blue" />}
+                icon={<Icon name="plus" size={24} color="white" />}
                 type="clear"
                 onPress={() => navigation.navigate("AddEvent")}
               />

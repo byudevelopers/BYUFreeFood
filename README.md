@@ -63,3 +63,7 @@ However when pushing to git you may receive an error:
 `--openssl-legacy-provider is not allowed in NODE_OPTIONS`
 Then run the command:
 `unset NODE_OPTIONS`
+
+## References
+Figma design link: https://www.figma.com/file/uEXkPOQhq30een78XQMTOt/BYUFood?node-id=0%3A1
+Trello board link: https://trello.com/b/s9xX2WtI/free-food-app

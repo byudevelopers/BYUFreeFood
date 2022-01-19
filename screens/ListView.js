@@ -34,7 +34,3 @@ export function ListView() {
     </View>
   );
 }
-
-//export function actionOnRow(item){
-//console.log("Selected Item: ", item);
-//}

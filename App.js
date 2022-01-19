@@ -56,8 +56,16 @@ export default function App() {
             ),
           })}
         />
-        <AppStack.Screen name="AddEvent" component={AddEventView} />
-        <AppStack.Screen name="EventDetailView" component={EventDetailView} />
+        <AppStack.Screen
+          name="AddEvent"
+          component={AddEventView}
+          options={{ title: "Add Event" }}
+        />
+        <AppStack.Screen
+          name="EventDetailView"
+          component={EventDetailView}
+          options={{ title: "Detail View" }}
+        />
       </AppStack.Navigator>
     </NavigationContainer>
   );

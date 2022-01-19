@@ -67,4 +67,4 @@ Then run the command:
 ## References
 Figma design link: https://www.figma.com/file/uEXkPOQhq30een78XQMTOt/BYUFood?node-id=0%3A1
 
-Trello board link: https://trello.com/b/s9xX2WtI/free-food-app
+Trello board link: https://trello.com/invite/b/s9xX2WtI/b72c0bcfa39714283761a2dc65eccf3b/free-food-app

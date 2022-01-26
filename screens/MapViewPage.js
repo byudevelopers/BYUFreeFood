@@ -14,7 +14,10 @@ export function MapViewPage(){
     longitudeDelta: 0.01,
   });
 
-  var location = buildings["HBLL"];
+  const buildingsArray = Object.values(buildings);
+  var markers = buildingsArray.map(location => (
+    <MapView.Marker coordinate={location.coordinate} title={location.title} description={location.abbreviation}/> 
+  ));
 
   return (
     <View style={styles.container}>
@@ -22,7 +25,7 @@ export function MapViewPage(){
         style={{ alignSelf: 'stretch', height: '100%' }}
         region={mapRegion}
       >
-        <Marker coordinate={location.coordinate} title={location.title} description={location.abbreviation}/> 
+        {markers}
       </MapView>
     </View>
   );

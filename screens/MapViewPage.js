@@ -14,6 +14,8 @@ export function MapViewPage(){
     longitudeDelta: 0.01,
   });
 
+  //TODO: Parse fake_data.json and filter the buildingsArray so only the buildings from the fake_data appear on the map
+
   const buildingsArray = Object.values(buildings);
   var markers = buildingsArray.map(location => (
     <MapView.Marker coordinate={location.coordinate} title={location.title} description={location.abbreviation}/> 

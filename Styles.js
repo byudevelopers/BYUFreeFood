@@ -27,7 +27,6 @@ export const styles = StyleSheet.create({
   // list view
   eventListItem: {
     padding: 10,
-    fontFamily: "Open Sans",
     backgroundColor: "#fff",
   },
   listDivider: {

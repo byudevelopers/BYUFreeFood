@@ -19,14 +19,14 @@
     }
   },
   {
-    "eventName": "Club Meeting",
+    "eventName": "Dance Party Meeting",
     "clubName": "BYU Dev Club",
     "dateTime": "12/3/2021 19:30",
     "location": {
       "building": "TNRB",
       "room": "484"
     },
-    "food": "Pizza",
+    "food": "Donuts",
     "description": "So much fun!",
     "rsvp": {
       "required": "false",

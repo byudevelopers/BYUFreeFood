@@ -4,6 +4,7 @@ import { Button } from "react-native-elements/dist/buttons/Button";
 import { styles } from "../Styles";
 import { createStackNavigator } from "@react-navigation/stack";
 import { useNavigation } from "@react-navigation/core";
+import { Divider } from "react-native-elements/dist/divider/Divider";
 
 const customData = require("../fake_data.json");
 const ListStack = createStackNavigator();
@@ -25,8 +26,9 @@ export function ListView() {
           <TouchableWithoutFeedback
             onPress={() => navigation.navigate("EventDetailView", { item })}>
             <View>
-              <View style={styles.listDivider} />
+              
               <Text style={styles.eventListItem}>{item.eventName}</Text>
+              <Divider style={styles.listDivider}/>
             </View>
           </TouchableWithoutFeedback>
         )}

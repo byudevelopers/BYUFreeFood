@@ -1,4 +1,4 @@
-import { StyleSheet } from "react-native";
+import { Text, StyleSheet } from "react-native";
 import { ScreenHeight, ScreenWidth } from "react-native-elements/dist/helpers";
 
 export const styles = StyleSheet.create({
@@ -27,12 +27,14 @@ export const styles = StyleSheet.create({
   // list view
   eventListItem: {
     padding: 10,
-    backgroundColor: "#5588aa",
+    fontFamily: "Open Sans",
+    backgroundColor: "#fff",
   },
   listDivider: {
     height: 1,
     width: ScreenWidth,
-    backgroundColor: "#000",
+    padding: 5,
+    backgroundColor: "#fff",
   },
   listContainer: {
     flex: 1,
@@ -45,5 +47,10 @@ export const styles = StyleSheet.create({
   },
   headerTitleStyle: {
       color: 'white',  
-  }
+  },
+
+  //home footer
+  homeTabs: {
+    backgroundColor: '#151561',
+  },
 });

@@ -20,14 +20,27 @@ function Home() {
   return (
     <HomeTabs.Navigator>
       <HomeTabs.Screen
-        name="List"
+        name="Home"
         component={ListView}
-        options={{ headerShown: false }}
+        options={{
+          headerShown: false,
+          tabBarIcon : ({color, size}) => (
+            <Icon name = "home" color = {"grey"} size = {28} />
+          ),
+        }}
       />
       <HomeTabs.Screen
         name="Map"
         component={MapViewPage}
-        options={{ headerShown: false }}
+        options={{
+          headerShown: false,
+          tabBarIcon : ({tintColor, size}) => (
+            <Icon name = "map" color = {"grey"} size = {28} />
+          ),
+          tabBarOptions: {
+            activeTintColor: 'blue'
+          }
+        }}
       />
     </HomeTabs.Navigator>
   );

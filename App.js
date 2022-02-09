@@ -52,8 +52,7 @@ export default function App() {
                 style={styles.headerButton}
                 icon={<Icon name="plus" size={24} color="blue" />}
                 type="clear"
-                onPress={() => 
-                  navigation.navigate("AddEvent")}
+                onPress={() => navigation.navigate("AddEvent")}
               />
             ),
           })}

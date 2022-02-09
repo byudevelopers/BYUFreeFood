@@ -2,7 +2,7 @@
   {
     "eventName": "Club Meeting",
     "clubName": "BYU Dev Club",
-    "dateTime": "12/3/2021 19:30",
+    "dateTime": "12/3/2021 19:30-21:00",
     "location": {
       "building": "TNRB",
       "room": "484"
@@ -19,14 +19,14 @@
     }
   },
   {
-    "eventName": "Dance Party Meeting",
-    "clubName": "BYU Dev Club",
-    "dateTime": "12/3/2021 19:30",
+    "eventName": "Dance Meeting",
+    "clubName": "BYU Dance Club",
+    "dateTime": "2/3/2022 9:30-21:00",
     "location": {
-      "building": "TNRB",
-      "room": "484"
+      "building": "MARB",
+      "room": "555"
     },
-    "food": "Donuts",
+    "food": "Drugs",
     "description": "So much fun!",
     "rsvp": {
       "required": "false",
@@ -38,9 +38,28 @@
     }
   },
   {
-    "eventName": "Club Meeting",
-    "clubName": "BYU Dev Club",
-    "dateTime": "12/3/2021 19:30",
+    "eventName": "BYU Legalize Marijuana",
+    "clubName": "BYU Weed Club",
+    "dateTime": "4/20/2022 4:20-16:20",
+    "location": {
+      "building": "SWKT",
+      "room": "420"
+    },
+    "food": "Brownies",
+    "description": "Come eat our special brownies!",
+    "rsvp": {
+      "required": "true",
+      "rsvpInfo": "Please respond at least 1 day in advance"
+    },
+    "contactInfo": {
+      "phone": "8014204200",
+      "email": "byuweedclub@maryjane.club"
+    }
+  },
+  {
+    "eventName": "Horseback Riding",
+    "clubName": "Horse Club",
+    "dateTime": "12/3/2021 19:30-21:00",
     "location": {
       "building": "TNRB",
       "room": "484"
@@ -53,18 +72,18 @@
     },
     "contactInfo": {
       "phone": "8018018011",
-      "email": "byudev@devclub.club"
+      "email": "horse@horse.club"
     }
   },
   {
-    "eventName": "Club Meeting",
-    "clubName": "BYU Dev Club",
-    "dateTime": "12/3/2021 19:30",
+    "eventName": "Police Meeting",
+    "clubName": "Police",
+    "dateTime": "1/7/2022 19:00-22:00",
     "location": {
-      "building": "TNRB",
-      "room": "484"
+      "building": "TMCB",
+      "room": "1"
     },
-    "food": "Pizza",
+    "food": "Horse meat",
     "description": "So much fun!",
     "rsvp": {
       "required": "false",
@@ -72,672 +91,7 @@
     },
     "contactInfo": {
       "phone": "8018018011",
-      "email": "byudev@devclub.club"
-    }
-  },
-  {
-    "eventName": "Club Meeting",
-    "clubName": "BYU Dev Club",
-    "dateTime": "12/3/2021 19:30",
-    "location": {
-      "building": "TNRB",
-      "room": "484"
-    },
-    "food": "Pizza",
-    "description": "So much fun!",
-    "rsvp": {
-      "required": "false",
-      "rsvpInfo": ""
-    },
-    "contactInfo": {
-      "phone": "8018018011",
-      "email": "byudev@devclub.club"
-    }
-  },
-  {
-    "eventName": "Club Meeting",
-    "clubName": "BYU Dev Club",
-    "dateTime": "12/3/2021 19:30",
-    "location": {
-      "building": "TNRB",
-      "room": "484"
-    },
-    "food": "Pizza",
-    "description": "So much fun!",
-    "rsvp": {
-      "required": "false",
-      "rsvpInfo": ""
-    },
-    "contactInfo": {
-      "phone": "8018018011",
-      "email": "byudev@devclub.club"
-    }
-  },
-  {
-    "eventName": "Club Meeting",
-    "clubName": "BYU Dev Club",
-    "dateTime": "12/3/2021 19:30",
-    "location": {
-      "building": "TNRB",
-      "room": "484"
-    },
-    "food": "Pizza",
-    "description": "So much fun!",
-    "rsvp": {
-      "required": "false",
-      "rsvpInfo": ""
-    },
-    "contactInfo": {
-      "phone": "8018018011",
-      "email": "byudev@devclub.club"
-    }
-  },
-  {
-    "eventName": "Club Meeting",
-    "clubName": "BYU Dev Club",
-    "dateTime": "12/3/2021 19:30",
-    "location": {
-      "building": "TNRB",
-      "room": "484"
-    },
-    "food": "Pizza",
-    "description": "So much fun!",
-    "rsvp": {
-      "required": "false",
-      "rsvpInfo": ""
-    },
-    "contactInfo": {
-      "phone": "8018018011",
-      "email": "byudev@devclub.club"
-    }
-  },
-  {
-    "eventName": "Club Meeting",
-    "clubName": "BYU Dev Club",
-    "dateTime": "12/3/2021 19:30",
-    "location": {
-      "building": "TNRB",
-      "room": "484"
-    },
-    "food": "Pizza",
-    "description": "So much fun!",
-    "rsvp": {
-      "required": "false",
-      "rsvpInfo": ""
-    },
-    "contactInfo": {
-      "phone": "8018018011",
-      "email": "byudev@devclub.club"
-    }
-  },
-  {
-    "eventName": "Club Meeting",
-    "clubName": "BYU Dev Club",
-    "dateTime": "12/3/2021 19:30",
-    "location": {
-      "building": "TNRB",
-      "room": "484"
-    },
-    "food": "Pizza",
-    "description": "So much fun!",
-    "rsvp": {
-      "required": "false",
-      "rsvpInfo": ""
-    },
-    "contactInfo": {
-      "phone": "8018018011",
-      "email": "byudev@devclub.club"
-    }
-  },
-  {
-    "eventName": "Club Meeting",
-    "clubName": "BYU Dev Club",
-    "dateTime": "12/3/2021 19:30",
-    "location": {
-      "building": "TNRB",
-      "room": "484"
-    },
-    "food": "Pizza",
-    "description": "So much fun!",
-    "rsvp": {
-      "required": "false",
-      "rsvpInfo": ""
-    },
-    "contactInfo": {
-      "phone": "8018018011",
-      "email": "byudev@devclub.club"
-    }
-  },
-  {
-    "eventName": "Club Meeting",
-    "clubName": "BYU Dev Club",
-    "dateTime": "12/3/2021 19:30",
-    "location": {
-      "building": "TNRB",
-      "room": "484"
-    },
-    "food": "Pizza",
-    "description": "So much fun!",
-    "rsvp": {
-      "required": "false",
-      "rsvpInfo": ""
-    },
-    "contactInfo": {
-      "phone": "8018018011",
-      "email": "byudev@devclub.club"
-    }
-  },
-  {
-    "eventName": "Club Meeting",
-    "clubName": "BYU Dev Club",
-    "dateTime": "12/3/2021 19:30",
-    "location": {
-      "building": "TNRB",
-      "room": "484"
-    },
-    "food": "Pizza",
-    "description": "So much fun!",
-    "rsvp": {
-      "required": "false",
-      "rsvpInfo": ""
-    },
-    "contactInfo": {
-      "phone": "8018018011",
-      "email": "byudev@devclub.club"
-    }
-  },
-  {
-    "eventName": "Club Meeting",
-    "clubName": "BYU Dev Club",
-    "dateTime": "12/3/2021 19:30",
-    "location": {
-      "building": "TNRB",
-      "room": "484"
-    },
-    "food": "Pizza",
-    "description": "So much fun!",
-    "rsvp": {
-      "required": "false",
-      "rsvpInfo": ""
-    },
-    "contactInfo": {
-      "phone": "8018018011",
-      "email": "byudev@devclub.club"
-    }
-  },
-  {
-    "eventName": "Club Meeting",
-    "clubName": "BYU Dev Club",
-    "dateTime": "12/3/2021 19:30",
-    "location": {
-      "building": "TNRB",
-      "room": "484"
-    },
-    "food": "Pizza",
-    "description": "So much fun!",
-    "rsvp": {
-      "required": "false",
-      "rsvpInfo": ""
-    },
-    "contactInfo": {
-      "phone": "8018018011",
-      "email": "byudev@devclub.club"
-    }
-  },
-  {
-    "eventName": "Club Meeting",
-    "clubName": "BYU Dev Club",
-    "dateTime": "12/3/2021 19:30",
-    "location": {
-      "building": "TNRB",
-      "room": "484"
-    },
-    "food": "Pizza",
-    "description": "So much fun!",
-    "rsvp": {
-      "required": "false",
-      "rsvpInfo": ""
-    },
-    "contactInfo": {
-      "phone": "8018018011",
-      "email": "byudev@devclub.club"
-    }
-  },
-  {
-    "eventName": "Club Meeting",
-    "clubName": "BYU Dev Club",
-    "dateTime": "12/3/2021 19:30",
-    "location": {
-      "building": "TNRB",
-      "room": "484"
-    },
-    "food": "Pizza",
-    "description": "So much fun!",
-    "rsvp": {
-      "required": "false",
-      "rsvpInfo": ""
-    },
-    "contactInfo": {
-      "phone": "8018018011",
-      "email": "byudev@devclub.club"
-    }
-  },
-  {
-    "eventName": "Club Meeting",
-    "clubName": "BYU Dev Club",
-    "dateTime": "12/3/2021 19:30",
-    "location": {
-      "building": "TNRB",
-      "room": "484"
-    },
-    "food": "Pizza",
-    "description": "So much fun!",
-    "rsvp": {
-      "required": "false",
-      "rsvpInfo": ""
-    },
-    "contactInfo": {
-      "phone": "8018018011",
-      "email": "byudev@devclub.club"
-    }
-  },
-  {
-    "eventName": "Club Meeting",
-    "clubName": "BYU Dev Club",
-    "dateTime": "12/3/2021 19:30",
-    "location": {
-      "building": "TNRB",
-      "room": "484"
-    },
-    "food": "Pizza",
-    "description": "So much fun!",
-    "rsvp": {
-      "required": "false",
-      "rsvpInfo": ""
-    },
-    "contactInfo": {
-      "phone": "8018018011",
-      "email": "byudev@devclub.club"
-    }
-  },
-  {
-    "eventName": "Club Meeting",
-    "clubName": "BYU Dev Club",
-    "dateTime": "12/3/2021 19:30",
-    "location": {
-      "building": "TNRB",
-      "room": "484"
-    },
-    "food": "Pizza",
-    "description": "So much fun!",
-    "rsvp": {
-      "required": "false",
-      "rsvpInfo": ""
-    },
-    "contactInfo": {
-      "phone": "8018018011",
-      "email": "byudev@devclub.club"
-    }
-  },
-  {
-    "eventName": "Club Meeting",
-    "clubName": "BYU Dev Club",
-    "dateTime": "12/3/2021 19:30",
-    "location": {
-      "building": "TNRB",
-      "room": "484"
-    },
-    "food": "Pizza",
-    "description": "So much fun!",
-    "rsvp": {
-      "required": "false",
-      "rsvpInfo": ""
-    },
-    "contactInfo": {
-      "phone": "8018018011",
-      "email": "byudev@devclub.club"
-    }
-  },
-  {
-    "eventName": "Club Meeting",
-    "clubName": "BYU Dev Club",
-    "dateTime": "12/3/2021 19:30",
-    "location": {
-      "building": "TNRB",
-      "room": "484"
-    },
-    "food": "Pizza",
-    "description": "So much fun!",
-    "rsvp": {
-      "required": "false",
-      "rsvpInfo": ""
-    },
-    "contactInfo": {
-      "phone": "8018018011",
-      "email": "byudev@devclub.club"
-    }
-  },
-  {
-    "eventName": "Club Meeting",
-    "clubName": "BYU Dev Club",
-    "dateTime": "12/3/2021 19:30",
-    "location": {
-      "building": "TNRB",
-      "room": "484"
-    },
-    "food": "Pizza",
-    "description": "So much fun!",
-    "rsvp": {
-      "required": "false",
-      "rsvpInfo": ""
-    },
-    "contactInfo": {
-      "phone": "8018018011",
-      "email": "byudev@devclub.club"
-    }
-  },
-  {
-    "eventName": "Club Meeting",
-    "clubName": "BYU Dev Club",
-    "dateTime": "12/3/2021 19:30",
-    "location": {
-      "building": "TNRB",
-      "room": "484"
-    },
-    "food": "Pizza",
-    "description": "So much fun!",
-    "rsvp": {
-      "required": "false",
-      "rsvpInfo": ""
-    },
-    "contactInfo": {
-      "phone": "8018018011",
-      "email": "byudev@devclub.club"
-    }
-  },
-  {
-    "eventName": "Club Meeting",
-    "clubName": "BYU Dev Club",
-    "dateTime": "12/3/2021 19:30",
-    "location": {
-      "building": "TNRB",
-      "room": "484"
-    },
-    "food": "Pizza",
-    "description": "So much fun!",
-    "rsvp": {
-      "required": "false",
-      "rsvpInfo": ""
-    },
-    "contactInfo": {
-      "phone": "8018018011",
-      "email": "byudev@devclub.club"
-    }
-  },
-  {
-    "eventName": "Club Meeting",
-    "clubName": "BYU Dev Club",
-    "dateTime": "12/3/2021 19:30",
-    "location": {
-      "building": "TNRB",
-      "room": "484"
-    },
-    "food": "Pizza",
-    "description": "So much fun!",
-    "rsvp": {
-      "required": "false",
-      "rsvpInfo": ""
-    },
-    "contactInfo": {
-      "phone": "8018018011",
-      "email": "byudev@devclub.club"
-    }
-  },
-  {
-    "eventName": "Club Meeting",
-    "clubName": "BYU Dev Club",
-    "dateTime": "12/3/2021 19:30",
-    "location": {
-      "building": "TNRB",
-      "room": "484"
-    },
-    "food": "Pizza",
-    "description": "So much fun!",
-    "rsvp": {
-      "required": "false",
-      "rsvpInfo": ""
-    },
-    "contactInfo": {
-      "phone": "8018018011",
-      "email": "byudev@devclub.club"
-    }
-  },
-  {
-    "eventName": "Club Meeting",
-    "clubName": "BYU Dev Club",
-    "dateTime": "12/3/2021 19:30",
-    "location": {
-      "building": "TNRB",
-      "room": "484"
-    },
-    "food": "Pizza",
-    "description": "So much fun!",
-    "rsvp": {
-      "required": "false",
-      "rsvpInfo": ""
-    },
-    "contactInfo": {
-      "phone": "8018018011",
-      "email": "byudev@devclub.club"
-    }
-  },
-  {
-    "eventName": "Club Meeting",
-    "clubName": "BYU Dev Club",
-    "dateTime": "12/3/2021 19:30",
-    "location": {
-      "building": "TNRB",
-      "room": "484"
-    },
-    "food": "Pizza",
-    "description": "So much fun!",
-    "rsvp": {
-      "required": "false",
-      "rsvpInfo": ""
-    },
-    "contactInfo": {
-      "phone": "8018018011",
-      "email": "byudev@devclub.club"
-    }
-  },
-  {
-    "eventName": "Club Meeting",
-    "clubName": "BYU Dev Club",
-    "dateTime": "12/3/2021 19:30",
-    "location": {
-      "building": "TNRB",
-      "room": "484"
-    },
-    "food": "Pizza",
-    "description": "So much fun!",
-    "rsvp": {
-      "required": "false",
-      "rsvpInfo": ""
-    },
-    "contactInfo": {
-      "phone": "8018018011",
-      "email": "byudev@devclub.club"
-    }
-  },
-  {
-    "eventName": "Club Meeting",
-    "clubName": "BYU Dev Club",
-    "dateTime": "12/3/2021 19:30",
-    "location": {
-      "building": "TNRB",
-      "room": "484"
-    },
-    "food": "Pizza",
-    "description": "So much fun!",
-    "rsvp": {
-      "required": "false",
-      "rsvpInfo": ""
-    },
-    "contactInfo": {
-      "phone": "8018018011",
-      "email": "byudev@devclub.club"
-    }
-  },
-  {
-    "eventName": "Club Meeting",
-    "clubName": "BYU Dev Club",
-    "dateTime": "12/3/2021 19:30",
-    "location": {
-      "building": "TNRB",
-      "room": "484"
-    },
-    "food": "Pizza",
-    "description": "So much fun!",
-    "rsvp": {
-      "required": "false",
-      "rsvpInfo": ""
-    },
-    "contactInfo": {
-      "phone": "8018018011",
-      "email": "byudev@devclub.club"
-    }
-  },
-  {
-    "eventName": "Club Meeting",
-    "clubName": "BYU Dev Club",
-    "dateTime": "12/3/2021 19:30",
-    "location": {
-      "building": "TNRB",
-      "room": "484"
-    },
-    "food": "Pizza",
-    "description": "So much fun!",
-    "rsvp": {
-      "required": "false",
-      "rsvpInfo": ""
-    },
-    "contactInfo": {
-      "phone": "8018018011",
-      "email": "byudev@devclub.club"
-    }
-  },
-  {
-    "eventName": "Club Meeting",
-    "clubName": "BYU Dev Club",
-    "dateTime": "12/3/2021 19:30",
-    "location": {
-      "building": "TNRB",
-      "room": "484"
-    },
-    "food": "Pizza",
-    "description": "So much fun!",
-    "rsvp": {
-      "required": "false",
-      "rsvpInfo": ""
-    },
-    "contactInfo": {
-      "phone": "8018018011",
-      "email": "byudev@devclub.club"
-    }
-  },
-  {
-    "eventName": "Club Meeting",
-    "clubName": "BYU Dev Club",
-    "dateTime": "12/3/2021 19:30",
-    "location": {
-      "building": "TNRB",
-      "room": "484"
-    },
-    "food": "Pizza",
-    "description": "So much fun!",
-    "rsvp": {
-      "required": "false",
-      "rsvpInfo": ""
-    },
-    "contactInfo": {
-      "phone": "8018018011",
-      "email": "byudev@devclub.club"
-    }
-  },
-  {
-    "eventName": "Club Meeting",
-    "clubName": "BYU Dev Club",
-    "dateTime": "12/3/2021 19:30",
-    "location": {
-      "building": "TNRB",
-      "room": "484"
-    },
-    "food": "Pizza",
-    "description": "So much fun!",
-    "rsvp": {
-      "required": "false",
-      "rsvpInfo": ""
-    },
-    "contactInfo": {
-      "phone": "8018018011",
-      "email": "byudev@devclub.club"
-    }
-  },
-  {
-    "eventName": "Club Meeting",
-    "clubName": "BYU Dev Club",
-    "dateTime": "12/3/2021 19:30",
-    "location": {
-      "building": "TNRB",
-      "room": "484"
-    },
-    "food": "Pizza",
-    "description": "So much fun!",
-    "rsvp": {
-      "required": "false",
-      "rsvpInfo": ""
-    },
-    "contactInfo": {
-      "phone": "8018018011",
-      "email": "byudev@devclub.club"
-    }
-  },
-  {
-    "eventName": "Club Meeting",
-    "clubName": "BYU Dev Club",
-    "dateTime": "12/3/2021 19:30",
-    "location": {
-      "building": "TNRB",
-      "room": "484"
-    },
-    "food": "Pizza",
-    "description": "So much fun!",
-    "rsvp": {
-      "required": "false",
-      "rsvpInfo": ""
-    },
-    "contactInfo": {
-      "phone": "8018018011",
-      "email": "byudev@devclub.club"
-    }
-  },
-  {
-    "eventName": "Club Meeting",
-    "clubName": "BYU Dev Club",
-    "dateTime": "12/3/2021 19:30",
-    "location": {
-      "building": "TNRB",
-      "room": "484"
-    },
-    "food": "Pizza",
-    "description": "So much fun!",
-    "rsvp": {
-      "required": "false",
-      "rsvpInfo": ""
-    },
-    "contactInfo": {
-      "phone": "8018018011",
-      "email": "byudev@devclub.club"
+      "email": "police@cops.club"
     }
   }
 ]

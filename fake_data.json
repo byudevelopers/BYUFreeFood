@@ -10,7 +10,7 @@
     "food": "Pizza",
     "description": "So much fun!",
     "rsvp": {
-      "required": false,
+      "required": "false",
       "rsvpInfo": ""
     },
     "contactInfo": {

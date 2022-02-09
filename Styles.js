@@ -58,12 +58,15 @@ export const styles = StyleSheet.create({
     justifyContent: "space-between",
     width: "100%",
   },
+  headerStyle: {
+    backgroundColor: byuBlue,
+  },
   headerTitleStyle: {
-    color: "white",
+    color: "#fff",
   },
 
   //home footer
   homeTabs: {
-    backgroundColor: "#151561",
+    backgroundColor: byuBlue,
   },
 });

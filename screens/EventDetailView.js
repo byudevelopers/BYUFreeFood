@@ -30,12 +30,12 @@ export function EventDetailView(props) {
       </View>
       <Divider />
       <View style={styles.EventDetailView_detailContainer}>
-        <Text>Date Time:</Text>
+        <Text>Food:</Text>
         <Text>{event.food}</Text>
       </View>
       <Divider />
       <View style={styles.EventDetailView_detailContainer}>
-        <Text>Date Time:</Text>
+        <Text>Description:</Text>
         <Text>{event.description}</Text>
       </View>
     </View>

@@ -12,6 +12,7 @@ import { Button } from "react-native-elements";
 import Icon from "react-native-vector-icons/FontAwesome";
 import { EventDetailView } from "./screens/EventDetailView";
 import { MapViewPage } from "./screens/MapViewPage";
+import { getFirebaseEvents } from "./EventClient";
 
 const AppStack = createStackNavigator();
 const HomeTabs = createBottomTabNavigator();

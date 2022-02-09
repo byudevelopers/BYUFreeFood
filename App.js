@@ -23,12 +23,16 @@ function Home() {
       <HomeTabs.Screen
         name="List"
         component={ListView}
-        options={{ headerShown: false }}
+        options={{ headerShown: false, tabBarIcon: ({ tintColor }) => (
+        <Icon name="list" size={20}/>
+      )}}
       />
       <HomeTabs.Screen
         name="Map"
         component={MapViewPage}
-        options={{ headerShown: false }}
+        options={{ headerShown: false , tabBarIcon: ({ tintColor }) => (
+        <Icon name="map-pin" size={20}/>
+      )}}
       />
     </HomeTabs.Navigator>
   );
@@ -61,5 +65,5 @@ export default function App() {
         <AppStack.Screen name="EventDetailView" component={EventDetailView} />
       </AppStack.Navigator>
     </NavigationContainer>
-  );
+  )
 }

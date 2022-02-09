@@ -53,7 +53,7 @@ export default function App() {
                 icon={<Icon name="plus" size={24} color="blue" />}
                 type="clear"
                 onPress={() => 
-                  getFirebaseEvents()}
+                  navigation.navigate("AddEvent")}
               />
             ),
           })}

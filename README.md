@@ -33,7 +33,7 @@ else {
 `git push` This adds your committed changes to your remote branch.
 }
 
-###Once you are done making your own changes and you are ready to put them in the main branch... 
+**Once you are done making your own changes and you are ready to put them in the main branch...** 
 
 First you'll need to merge master into your branch. Use the following series of commands:
 

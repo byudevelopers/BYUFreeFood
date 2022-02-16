@@ -25,7 +25,7 @@ export function EventDetailView(props) {
         <Text>Date Time:</Text>
         <Text>{event.dateTime}</Text>
         <Text>
-          {event.location.room} in the {event.location.building}
+          {event.locationRoom} in the {event.locationBuilding}
         </Text>
       </View>
       <Divider />

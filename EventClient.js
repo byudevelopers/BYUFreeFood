@@ -17,3 +17,9 @@ export async function getFirebaseEvents() {
     console.log(doc.id, " => ", doc.data());
     });
 }
+
+export async function uploadEvent(event) {
+    firebase.firestore().collection('users').add({
+        event
+      });
+}

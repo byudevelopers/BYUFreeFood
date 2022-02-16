@@ -3,95 +3,404 @@
     "eventName": "Club Meeting",
     "clubName": "BYU Dev Club",
     "dateTime": "12/3/2021 19:30-21:00",
-    "location": {
-      "building": "TNRB",
-      "room": "484"
-    },
+    "locationBuilding": "TNRB",
+    "locationRoom": "484",
     "food": "Pizza",
     "description": "So much fun!",
-    "rsvp": {
-      "required": "false",
-      "rsvpInfo": ""
-    },
-    "contactInfo": {
-      "phone": "8018018011",
-      "email": "byudev@devclub.club"
-    }
+    "rsvpRequired": false,
+    "rsvpInfo": "",
+    "contactPhone": 8018018011,
+    "contactEmail": "byudev@devclub.club"
   },
   {
-    "eventName": "Dance Meeting",
+
+    "eventName": "Dance Party Meeting",
+    "dateTime": "2/3/2021 19:30",
+    "locationBuilding": "MARB",
+    "locationRoom": "555",
     "clubName": "BYU Dance Club",
-    "dateTime": "2/3/2022 9:30-21:00",
-    "location": {
-      "building": "MARB",
-      "room": "555"
-    },
-    "food": "Drugs",
+    "food": "Donuts",
     "description": "So much fun!",
-    "rsvp": {
-      "required": "false",
-      "rsvpInfo": ""
-    },
-    "contactInfo": {
-      "phone": "8018018011",
-      "email": "byudev@devclub.club"
-    }
+    "rsvpRequired": false,
+    "rsvpInfo": "",
+    "contactPhone": 8018018011,
+    "contactEmail": "yudev@devclub.club"
   },
   {
     "eventName": "BYU Legalize Marijuana",
     "clubName": "BYU Weed Club",
     "dateTime": "4/20/2022 4:20-16:20",
-    "location": {
-      "building": "SWKT",
-      "room": "420"
-    },
+    "locationBuilding": "SWKT",
+    "locationRoom": "420",
     "food": "Brownies",
     "description": "Come eat our special brownies!",
-    "rsvp": {
-      "required": "true",
-      "rsvpInfo": "Please respond at least 1 day in advance"
-    },
-    "contactInfo": {
-      "phone": "8014204200",
-      "email": "byuweedclub@maryjane.club"
-    }
+    "rsvpRequired": "true",
+    "rsvpInfo": "Please respond at least 1 day in advance",
+    "contactPhone": "8014204200",
+    "contactEmail": "byuweedclub@maryjane.club"
   },
   {
     "eventName": "Horseback Riding",
     "clubName": "Horse Club",
     "dateTime": "12/3/2021 19:30-21:00",
-    "location": {
-      "building": "TNRB",
-      "room": "484"
-    },
+    "locationBuilding": "TNRB",
+    "room": "124",
     "food": "Pizza",
     "description": "So much fun!",
-    "rsvp": {
-      "required": "false",
-      "rsvpInfo": ""
-    },
-    "contactInfo": {
-      "phone": "8018018011",
-      "email": "horse@horse.club"
-    }
+    "rsvpRequired": "false",
+    "rsvpInfo": "",
+    "contactPhone": "8018018011",
+    "contactEmail": "horse@horse.club"
   },
   {
-    "eventName": "Police Meeting",
-    "clubName": "Police",
-    "dateTime": "1/7/2022 19:00-22:00",
-    "location": {
-      "building": "TMCB",
-      "room": "1"
-    },
-    "food": "Horse meat",
-    "description": "So much fun!",
-    "rsvp": {
-      "required": "false",
-      "rsvpInfo": ""
-    },
-    "contactInfo": {
-      "phone": "8018018011",
-      "email": "police@cops.club"
-    }
+    "eventName": "Testing center recruitment",
+    "dateTime": "2/23/2022 7:45",
+    "locationBuilding": "Heber J Grant",
+    "locationRoom": "100",
+    "clubName": "Test Moderators Union, Provo Chapter",
+    "food": "Snow Cones",
+    "description": "Come learn why you want to test with us!!",
+    "rsvpRequired": true,
+    "rsvpInfo": "https://example.com",
+    "contactPhone": 8018018012,
+    "contactEmail": "testers@example.com"
+  },
+  {
+    "eventName": "Bean Museum Directors' Night",
+    "dateTime": "2/16/2022 16:30",
+    "locationBuilding": "Bean Museum",
+    "locationRoom": "100",
+    "clubName": "Animal Lovers",
+    "food": "Smoked salmon",
+    "description": "Come meet the two headed snake",
+    "rsvpRequired": false,
+    "rsvpInfo": "",
+    "contactPhone": 8018018013,
+    "contactEmail": "bean@www.example.com"
+  },
+  {
+    "eventName": "Women's Basketball vs Pepperdine",
+    "dateTime": "4/4/2022 19:30",
+    "locationBuilding": "Smith Fieldhouse",
+    "locationRoom": "Main Room",
+    "clubName": "Athletics & Sports",
+    "food": "",
+    "description": "",
+    "rsvpRequired": true,
+    "rsvpInfo": "",
+    "contactPhone": 8018018014,
+    "contactEmail": "sports@devclub.club"
+  },
+  {
+    "eventName": "Baseball vs. Oklahoma State",
+    "dateTime": "2022-03-10 15:00",
+    "locationBuilding": "Miller Park",
+    "locationRoom": "",
+    "clubName": "",
+    "food": "Hotdogs",
+    "description": "America's pastime, a great sport",
+    "rsvpRequired": false,
+    "rsvpInfo": "",
+    "contactPhone": null,
+    "contactEmail": ""
+  },
+  {
+    "eventName": "Office of Belonging Grand Opening",
+    "dateTime": "2022-03-11 15:00",
+    "locationBuilding": "Office of belonging",
+    "locationRoom": "patio",
+    "clubName": "Inclusivity & Exclusion",
+    "food": "Good Feelings",
+    "description": "Celebrate good times come on!",
+    "rsvpRequired": false,
+    "rsvpInfo": "",
+    "contactPhone": null,
+    "contactEmail": ""
+  },
+  {
+    "eventName": "Mandatory Vaccination",
+    "dateTime": "2022-04-01 15:00",
+    "locationBuilding": "Student Health Center",
+    "locationRoom": "",
+    "clubName": "",
+    "food": "Pfizer",
+    "description": "",
+    "rsvpRequired": true,
+    "rsvpInfo": "",
+    "contactPhone": 8018018017,
+    "contactEmail": "vaxxers@example.com"
+  },
+  {
+    "eventName": "STEM FAIR",
+    "dateTime": "2022-02-03 10:00",
+    "locationBuilding": "WILK",
+    "locationRoom": "Ballroom",
+    "clubName": "",
+    "food": "Snacks & Candy",
+    "description": "",
+    "rsvpRequired": true,
+    "rsvpInfo": "www.byu.edu",
+    "contactPhone": null,
+    "contactEmail": ""
+  },
+  {
+    "eventName": "Housing Fair",
+    "dateTime": "2022-05-02 15:00",
+    "locationBuilding": "Heritage Central Building",
+    "locationRoom": "100",
+    "clubName": "",
+    "food": "Pasta",
+    "description": "Chill opportunity to meet landlords",
+    "rsvpRequired": false,
+    "rsvpInfo": "",
+    "contactPhone": null,
+    "contactEmail": "housesbyu@example.com"
+  },
+  {
+    "eventName": "Baseball vs. Oklahoma State",
+    "dateTime": "2022-05-15 15:00",
+    "locationBuilding": "Miller Park",
+    "locationRoom": "",
+    "clubName": "",
+    "food": "Hotdogs",
+    "description": "America's pastime, a great sport",
+    "rsvpRequired": false,
+    "rsvpInfo": "",
+    "contactPhone": null,
+    "contactEmail": ""
+  },
+  {
+    "eventName": "Baseball vs. Oklahoma State",
+    "dateTime": "2022-05-16 15:00",
+    "locationBuilding": "Miller Park",
+    "locationRoom": "",
+    "clubName": "",
+    "food": "Hotdogs",
+    "description": "America's pastime, a great sport",
+    "rsvpRequired": false,
+    "rsvpInfo": "",
+    "contactPhone": null,
+    "contactEmail": ""
+  },
+  {
+    "eventName": "Baseball vs. Oklahoma State",
+    "dateTime": "2022-05-17 15:00",
+    "locationBuilding": "Miller Park",
+    "locationRoom": "",
+    "clubName": "",
+    "food": "Hotdogs",
+    "description": "America's pastime, a great sport",
+    "rsvpRequired": false,
+    "rsvpInfo": "",
+    "contactPhone": null,
+    "contactEmail": ""
+  },
+  {
+    "eventName": "Baseball vs. Oklahoma State",
+    "dateTime": "2022-05-18 15:00",
+    "locationBuilding": "Miller Park",
+    "locationRoom": "",
+    "clubName": "",
+    "food": "Hotdogs",
+    "description": "America's pastime, a great sport",
+    "rsvpRequired": false,
+    "rsvpInfo": "",
+    "contactPhone": null,
+    "contactEmail": ""
+  },
+  {
+    "eventName": "Baseball vs. Oklahoma State",
+    "dateTime": "2022-05-19 15:00",
+    "locationBuilding": "Miller Park",
+    "locationRoom": "",
+    "clubName": "",
+    "food": "Hotdogs",
+    "description": "America's pastime, a great sport",
+    "rsvpRequired": false,
+    "rsvpInfo": "",
+    "contactPhone": null,
+    "contactEmail": ""
+  },
+  {
+    "eventName": "Baseball vs. Oklahoma State",
+    "dateTime": "2022-05-20 15:00",
+    "locationBuilding": "Miller Park",
+    "locationRoom": "",
+    "clubName": "",
+    "food": "Hotdogs",
+    "description": "America's pastime, a great sport",
+    "rsvpRequired": false,
+    "rsvpInfo": "",
+    "contactPhone": null,
+    "contactEmail": ""
+  },
+  {
+    "eventName": "Baseball vs. Oklahoma State",
+    "dateTime": "2022-05-21 15:00",
+    "locationBuilding": "Miller Park",
+    "locationRoom": "",
+    "clubName": "",
+    "food": "Hotdogs",
+    "description": "America's pastime, a great sport",
+    "rsvpRequired": false,
+    "rsvpInfo": "",
+    "contactPhone": null,
+    "contactEmail": ""
+  },
+  {
+    "eventName": "Baseball vs. Oklahoma State",
+    "dateTime": "2022-05-22 15:00",
+    "locationBuilding": "Miller Park",
+    "locationRoom": "",
+    "clubName": "",
+    "food": "Hotdogs",
+    "description": "America's pastime, a great sport",
+    "rsvpRequired": false,
+    "rsvpInfo": "",
+    "contactPhone": null,
+    "contactEmail": ""
+  },
+  {
+    "eventName": "Baseball vs. Oklahoma State",
+    "dateTime": "2022-05-23 15:00",
+    "locationBuilding": "Miller Park",
+    "locationRoom": "",
+    "clubName": "",
+    "food": "Hotdogs",
+    "description": "America's pastime, a great sport",
+    "rsvpRequired": false,
+    "rsvpInfo": "",
+    "contactPhone": null,
+    "contactEmail": ""
+  },
+  {
+    "eventName": "Baseball vs. Oklahoma State",
+    "dateTime": "2022-05-24 15:00",
+    "locationBuilding": "Miller Park",
+    "locationRoom": "",
+    "clubName": "",
+    "food": "Hotdogs",
+    "description": "America's pastime, a great sport",
+    "rsvpRequired": false,
+    "rsvpInfo": "",
+    "contactPhone": null,
+    "contactEmail": ""
+  },
+  {
+    "eventName": "Baseball vs. Oklahoma State",
+    "dateTime": "2022-05-25 15:00",
+    "locationBuilding": "Miller Park",
+    "locationRoom": "",
+    "clubName": "",
+    "food": "Hotdogs",
+    "description": "America's pastime, a great sport",
+    "rsvpRequired": false,
+    "rsvpInfo": "",
+    "contactPhone": null,
+    "contactEmail": ""
+  },
+  {
+    "eventName": "Baseball vs. Oklahoma State",
+    "dateTime": "2022-05-26 15:00",
+    "locationBuilding": "Miller Park",
+    "locationRoom": "",
+    "clubName": "",
+    "food": "Hotdogs",
+    "description": "America's pastime, a great sport",
+    "rsvpRequired": false,
+    "rsvpInfo": "",
+    "contactPhone": null,
+    "contactEmail": ""
+  },
+  {
+    "eventName": "Baseball vs. Oklahoma State",
+    "dateTime": "2022-05-27 15:00",
+    "locationBuilding": "Miller Park",
+    "locationRoom": "",
+    "clubName": "",
+    "food": "Hotdogs",
+    "description": "America's pastime, a great sport",
+    "rsvpRequired": false,
+    "rsvpInfo": "",
+    "contactPhone": null,
+    "contactEmail": ""
+  },
+  {
+    "eventName": "Baseball vs. Oklahoma State",
+    "dateTime": "2022-05-28 15:00",
+    "locationBuilding": "Miller Park",
+    "locationRoom": "",
+    "clubName": "",
+    "food": "Hotdogs",
+    "description": "America's pastime, a great sport",
+    "rsvpRequired": false,
+    "rsvpInfo": "",
+    "contactPhone": null,
+    "contactEmail": ""
+  },
+  {
+    "eventName": "Baseball vs. Oklahoma State",
+    "dateTime": "2022-05-29 15:00",
+    "locationBuilding": "Miller Park",
+    "locationRoom": "",
+    "clubName": "",
+    "food": "Hotdogs",
+    "description": "America's pastime, a great sport",
+    "rsvpRequired": false,
+    "rsvpInfo": "",
+    "contactPhone": null,
+    "contactEmail": ""
+  },
+  {
+    "eventName": "Baseball vs. Oklahoma State",
+    "dateTime": "2022-05-30 15:00",
+    "locationBuilding": "Miller Park",
+    "locationRoom": "",
+    "clubName": "",
+    "food": "Hotdogs",
+    "description": "America's pastime, a great sport",
+    "rsvpRequired": false,
+    "rsvpInfo": "",
+    "contactPhone": null,
+    "contactEmail": ""
+  },
+  {
+    "eventName": "Baseball vs. Oklahoma State",
+    "dateTime": "2022-05-31 15:00",
+    "locationBuilding": "Miller Park",
+    "locationRoom": "",
+    "clubName": "",
+    "food": "Hotdogs",
+    "description": "America's pastime, a great sport",
+    "rsvpRequired": false,
+    "rsvpInfo": "",
+    "contactPhone": null,
+    "contactEmail": ""
+  },
+  {
+    "eventName": "Baseball vs. Oklahoma State",
+    "dateTime": "2022-06-01 15:00",
+    "locationBuilding": "Miller Park",
+    "locationRoom": "",
+    "clubName": "",
+    "food": "Hotdogs",
+    "description": "America's pastime, a great sport",
+    "rsvpRequired": false,
+    "rsvpInfo": "",
+    "contactPhone": null,
+    "contactEmail": ""
+  },
+  {
+    "eventName": "Baseball vs. Oklahoma State",
+    "dateTime": "2022-06-02 15:00",
+    "locationBuilding": "Miller Park",
+    "locationRoom": "",
+    "clubName": "",
+    "food": "Hotdogs",
+    "description": "America's pastime, a great sport",
+    "rsvpRequired": false,
+    "rsvpInfo": "",
+    "contactPhone": null,
+    "contactEmail": ""
   }
-]
+ ]

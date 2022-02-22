@@ -9,6 +9,12 @@ export function EventDetailView(props) {
   const [value, setValue] = useState(null);
   const event = props.route.params.item;
   console.log(event);
+  
+  const eventName = event.eventName;
+  props.navigation.setOptions({
+    headerTitle: eventName
+  });
+
   return (
     <View style={styles.EventDetailView_infoContainer}>
       <View style={styles.EventDetailView_detailContainer}>

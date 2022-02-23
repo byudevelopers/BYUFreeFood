@@ -3,6 +3,8 @@ import { StyleSheet, Button, Text, View } from "react-native";
 import DropDownPicker from "react-native-dropdown-picker";
 import { TextInput } from "react-native-gesture-handler";
 import { styles } from "../Styles";
+import { event } from "../event.js"
+import { getFirebaseEvents, uploadEvent } from "../EventClient";
 
 export function AddEventView() {
   const [open, setOpen] = useState(false);
@@ -14,10 +16,14 @@ export function AddEventView() {
     { label: "TNRB", value: "TNRB" },
     { label: "JFSB", value: "JFSB" },
   ];
-  let event = require("../event.js");
 
-  function updateEvent() {
-    console.log(event)
+  function addEvent() {
+    event.building = building;
+    event.eventName = eventName;
+    event.clubName = clubName;
+    event.timeDate = timeDate
+    console.log(uploadEvent(event))
+    console.log(getFirebaseEvents());
   }
 
   return (
@@ -50,7 +56,7 @@ export function AddEventView() {
       </View>
       <Button
         title="Press me"
-        onPress={() => updateEvent()}
+        onPress={() => addEvent()}
       />
     </View>
   );

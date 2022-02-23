@@ -5,8 +5,9 @@ import { styles } from "../Styles";
 import { createStackNavigator } from "@react-navigation/stack";
 import { useNavigation } from "@react-navigation/core";
 import { Divider } from "react-native-elements/dist/divider/Divider";
+import { getFirebaseEvents } from "../EventClient";
 
-const customData = require("../fake_data.json");
+const customData = getFirebaseEvents();
 const ListStack = createStackNavigator();
 
 export function ListView() {
@@ -17,6 +18,8 @@ export function ListView() {
     { label: "JFSB", value: "JFSB" },
   ];
   const navigation = useNavigation();
+  console.log("i'm here. Here are the events")
+  console.log(customData);
 
   return (
     <View style={styles.listContainer}>

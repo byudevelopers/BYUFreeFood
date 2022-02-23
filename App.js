@@ -14,12 +14,14 @@ import { EventDetailView } from "./screens/EventDetailView";
 import { MapViewPage } from "./screens/MapViewPage";
 import { getFirebaseEvents } from "./EventClient";
 
+
 const AppStack = createStackNavigator();
 const HomeTabs = createBottomTabNavigator();
 
 function Home() {
   return (
     <HomeTabs.Navigator>
+      
       <HomeTabs.Screen
         name="List"
         component={ListView}
@@ -47,18 +49,28 @@ export default function App() {
           component={Home}
           options={({ navigation }) => ({
             headerTitle: "BYUFreeFood",
+            headerStyle: styles.headerStyle,
+            headerTitleStyle: styles.headerTitleStyle,
             headerRight: () => (
               <Button
                 style={styles.headerButton}
-                icon={<Icon name="plus" size={24} color="blue" />}
+                icon={<Icon name="plus" size={24} color="white" />}
                 type="clear"
                 onPress={() => navigation.navigate("AddEvent")}
               />
             ),
           })}
         />
-        <AppStack.Screen name="AddEvent" component={AddEventView} />
-        <AppStack.Screen name="EventDetailView" component={EventDetailView} />
+        <AppStack.Screen
+          name="AddEvent"
+          component={AddEventView}
+          options={{ title: "Add Event" }}
+        />
+        <AppStack.Screen
+          name="EventDetailView"
+          component={EventDetailView}
+          options={{ title: "Detail View" }}
+        />
       </AppStack.Navigator>
     </NavigationContainer>
   );

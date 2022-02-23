@@ -14,6 +14,14 @@ export function MapViewPage(){
     longitudeDelta: 0.01,
   });
 
+  let markers = this.state.buildings.map(building => (
+    <MapView.Marker
+      coordinate={building.coordinate}
+      title={building.title}
+      description={building.abbreviation}
+    />
+  ));
+
   var location = buildings["HBLL"];
 
   return (
@@ -23,6 +31,7 @@ export function MapViewPage(){
         region={mapRegion}
       >
         <Marker coordinate={location.coordinate} title={location.title} description={location.abbreviation}/> 
+        {markers}
       </MapView>
     </View>
   );

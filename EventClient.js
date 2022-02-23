@@ -1,6 +1,7 @@
 import * as data from './fake_data.json'
 import { app, db } from './firebase'
-import { collection, getDocs } from 'firebase/firestore'
+import { collection, getDocs, doc, setDoc } from 'firebase/firestore'
+import uuid from 'react-native-uuid';
 
 //USAGE
 //import { getEventList } from "../EventClient"
@@ -12,8 +13,17 @@ export function getEventList() {
 
 export async function getFirebaseEvents() {
     const querySnapshot = await getDocs(collection(db, 'events'));
+    console.log("This is the database:");
     querySnapshot.forEach((doc) => {
     // doc.data() is never undefined for query doc snapshots
     console.log(doc.id, " => ", doc.data());
     });
+}
+
+export async function uploadEvent(event) {
+    
+    console.log("Uploading event...")
+    console.log(event);
+    let id = uuid.v4();
+    await setDoc(doc(db, "events", id), event);
 }

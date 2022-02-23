@@ -6,12 +6,8 @@ export let event = {
         "room": "",
         "food": "",
         "description": "",
-        "rsvp": {
-          "required": "",
-          "rsvpInfo": ""
-        },
-        "contactInfo": {
-          "phone": "",
-          "email": ""
-        }
+        "rsvpRequired": false,
+        "rsvpInfo": "",
+        "contactPhone": 0000000000,
+        "contactEmail": ""
 };

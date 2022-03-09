@@ -16,6 +16,9 @@ import { MapViewPage } from "./screens/MapViewPage";
 const AppStack = createStackNavigator();
 const HomeTabs = createBottomTabNavigator();
 
+
+// Todo: figure out how to make the icons on the tab bar have an active tint
+
 function Home() {
   return (
     <HomeTabs.Navigator>

@@ -4,22 +4,26 @@ import { Button } from "react-native-elements/dist/buttons/Button";
 import { styles } from "../Styles";
 import { createStackNavigator } from "@react-navigation/stack";
 import { useNavigation } from "@react-navigation/core";
-import { Divider } from "react-native-elements/dist/divider/Divider";
+import { Divider } from "react-native-elements/dist/divider/Divider"; 
 import { getFirebaseEvents } from "../EventClient";
+import { Cache } from "../cache";
 
-const customData = getFirebaseEvents();
+//const customData = require("../fake_data.json");
 const ListStack = createStackNavigator();
+//const [customData, setCustomData] = useState({});
+
 
 export function ListView() {
   const [open, setOpen] = useState(false);
   const [value, setValue] = useState(null);
+  const [customData, setCustomData] = useState({});
+
   const buildings = [
     { label: "TNRB", value: "TNRB" },
     { label: "JFSB", value: "JFSB" },
   ];
   const navigation = useNavigation();
-  console.log("i'm here. Here are the events")
-  console.log(customData);
+  Cache.getInstance().getAllEvents(setCustomData);
 
   return (
     <View style={styles.listContainer}>

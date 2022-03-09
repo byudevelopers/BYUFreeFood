@@ -12,18 +12,18 @@ export function getEventList() {
 }
 
 export async function getFirebaseEvents() {
-    const querySnapshot = await getDocs(collection(db, 'events'));
     let events = []
-    console.log("This is the database:");
+    const querySnapshot = await getDocs(collection(db, 'events'));
+    //console.log("This is the database:");
     querySnapshot.forEach((doc) => {
         // doc.data() is never undefined for query doc snapshots
-        console.log(doc.id, " => ", doc.data());
+        //console.log(doc.id, " => ", doc.data());
         events.push(doc.data());
     });
     console.log(querySnapshot.docs.map(doc => doc.data()));
-    console.log("here are the events")
-    console.log(events);
-    return events
+    //console.log("here are the events")
+    console.log("server call");
+    return events;
 }
 
 export async function uploadEvent(event) {
@@ -33,3 +33,4 @@ export async function uploadEvent(event) {
     let id = uuid.v4();
     await setDoc(doc(db, "events", id), event);
 }
+

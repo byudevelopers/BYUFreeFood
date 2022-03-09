@@ -8,6 +8,6 @@ export let event = {
         "description": "",
         "rsvpRequired": false,
         "rsvpInfo": "",
-        "contactPhone": 0000000000,
+        "contactPhone": "0000000000",
         "contactEmail": ""
 };

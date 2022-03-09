@@ -17,13 +17,13 @@ export function ListView() {
   ];
 
   function makeListOfDays() {
+    let sunday = { title: "Sunday", data: [] };
     let monday = { title: "Monday", data: [] };
     let tuesday = { title: "Tuesday", data: [] };
     let wednesday = { title: "Wednesday", data: [] };
     let thursday = { title: "Thursday", data: [] };
     let friday = { title: "Friday", data: [] };
     let saturday = { title: "Saturday", data: [] };
-    let sunday = { title: "Sunday", data: [] };
     dataSortedByDate.push(sunday);
     dataSortedByDate.push(monday);
     dataSortedByDate.push(tuesday);
@@ -32,26 +32,29 @@ export function ListView() {
     dataSortedByDate.push(friday);
     dataSortedByDate.push(saturday);
     for (let i = 0; i < customData.length; i++) {
-      console.log(i);
-      let date = new Date(customData[i]);
-      console.log(customData[i].dateTime);
-      if (date.getDay == 0) {
-        dataSortedByDate[0].data.push(customData[i]);
-      } else if (date.getDay == 1) {
-        dataSortedByDate[1].data.push(customData[i]);
-      } else if (date.getDay == 2) {
-        dataSortedByDate[2].data.push(customData[i]);
-      } else if (date.getDay == 3) {
-        dataSortedByDate[3].data.push(customData[i]);
-      } else if (date.getDay == 4) {
-        dataSortedByDate[4].data.push(customData[i]);
-      } else if (date.getDay == 5) {
-        dataSortedByDate[5].data.push(customData[i]);
-      } else if (date.getDay == 6) {
-        dataSortedByDate[6].data.push(customData[i]);
+      //console.log(i);
+      let date = new Date(customData[i].dateTime);
+      //console.log(date.getDay() + " year: " + date.getFullYear());
+      //console.log(customData[i].eventName);
+      if (date.getDay() == 0) {
+        dataSortedByDate[0].data.push(customData[i].eventName);
+      } else if (date.getDay() == 1) {
+        dataSortedByDate[1].data.push(customData[i].eventName);
+      } else if (date.getDay() == 2) {
+        dataSortedByDate[2].data.push(customData[i].eventName);
+      } else if (date.getDay() == 3) {
+        dataSortedByDate[3].data.push(customData[i].eventName);
+      } else if (date.getDay() == 4) {
+        dataSortedByDate[4].data.push(customData[i].eventName);
+      } else if (date.getDay() == 5) {
+        console.log("I'm here");
+        dataSortedByDate[5].data.push(customData[i].eventName);
+      } else if (date.getDay() == 6) {
+        dataSortedByDate[6].data.push(customData[i].eventName);
       }
     }
   }
+  // console.log("my array " + dataSortedByDate);
 
   const Item = ({ title }) => (
     <View style={styles.item}>
@@ -78,19 +81,11 @@ export function ListView() {
     },
   ];
 
-  // console.log(dataSortedByDate);
-  // console.log(DATA);
+  //console.log(dataSortedByDate);
+  //console.log(DATA);
 
   return (
     <SafeAreaView style={styles.container}>
-      {/* <SectionList
-        sections={DATA}
-        keyExtractor={(item, index) => item + index}
-        renderItem={({ item }) => <Item title={item} />}
-        renderSectionHeader={({ section: { title } }) => (
-          <Text style={styles.header}>{title}</Text>
-        )}
-      /> */}
       <SectionList
         sections={dataSortedByDate}
         keyExtractor={(item, index) => item + index}

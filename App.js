@@ -23,12 +23,12 @@ function Home() {
   return (
     <HomeTabs.Navigator>
       <HomeTabs.Screen
-        name="Home"
+        name="List"
         component={ListView}
         options={{
           headerShown: false,
-          tabBarIcon : ({color, size}) => (
-            <Icon name = "home" color = {"grey"} size = {28} />
+          tabBarIcon : ({tintColor, size}) => (
+            <Icon name = "list" color = {tintColor} size = {28} />
           ),
         }}
       />
@@ -38,16 +38,26 @@ function Home() {
         options={{
           headerShown: false,
           tabBarIcon : ({tintColor, size}) => (
-            <Icon name = "map" color = {"grey"} size = {28} />
+            <Icon name = "map" color = {tintColor} size = {28} />
           ),
-          tabBarOptions: {
-            activeTintColor: 'blue'
-          }
         }}
       />
     </HomeTabs.Navigator>
   );
 }
+
+// tabBarOptions: {
+//         activeTintColor: "#006600",
+//       },
+//       tabBarIcon: (tabInfo) => {
+//         return (
+//           <Ionicons
+//             name="md-home"
+//             size={24}
+//             color={tabInfo.focused ? "#006600" : "#8e8e93"}
+//           />
+//         );
+//       },
 
 function MapView() {
   return MapViewPage;

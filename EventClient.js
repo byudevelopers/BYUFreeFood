@@ -11,6 +11,14 @@ export function getEventList() {
     return data;
 }
 
+export async function getBuildingEvents(building) {
+  var eventList = await getFirebaseEvents();
+  var buildingEvents = eventList.filter(event => event["building"] === building);
+  console.log("here are the building events");
+  console.log(buildingEvents);
+  return buildingEvents;
+}
+
 export async function getFirebaseEvents() {
     let events = []
     const querySnapshot = await getDocs(collection(db, 'events'));
@@ -27,10 +35,9 @@ export async function getFirebaseEvents() {
 }
 
 export async function uploadEvent(event) {
-    
+
     console.log("Uploading event...")
     console.log(event);
     let id = uuid.v4();
     await setDoc(doc(db, "events", id), event);
 }
-

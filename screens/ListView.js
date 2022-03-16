@@ -23,8 +23,7 @@ export function ListView() {
       <FlatList
         data={customData}
         renderItem={({ item }) => (
-          <TouchableWithoutFeedback
-            onPress={() => navigation.navigate("EventDetailView", { item })}>
+          <TouchableWithoutFeedback onPress={() => navigation.navigate("EventDetailView", { item })}>
             <View>
               
               <Text style={styles.eventListItem}>{item.eventName}</Text>

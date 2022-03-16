@@ -28,36 +28,37 @@ export function AddEventView() {
 
   return (
     <View style={styles.container}>
-      <Text style={styles.header}>Create a new event</Text>
       <View style={styles.rowContainer}>
-        <Text>Event:</Text>
-        <TextInput style={styles.textInput} placeholder="Your event name" onChange={(value) => setEventName(value.nativeEvent.text)}/>
+        <TextInput style={styles.textInput} placeholder="Your event name"/>
       </View>
       <View style={styles.rowContainer}>
-        <Text>Organizer:</Text>
-        <TextInput style={styles.textInput} placeholder="Your club/company" onChange={(value) => setClubName(value.nativeEvent.text)}/>
+        <TextInput style={styles.textInput} placeholder="Your club/organization" />
       </View>
       <View style={styles.rowContainer}>
-        <Text>Date and Time:</Text>
-        <TextInput style={styles.textInput} placeholder="Event time and date" onChange={(value) => setTimeDate(value.nativeEvent.text)}/>
+        <TextInput style={styles.textInput} placeholder="Food provided" />
       </View>
       <View style={styles.rowContainer}>
-        <Text>Building:</Text>
-        <DropDownPicker
-          placeholder="Choose one"
-          style={styles.dropdown}
-          containerStyle={styles.dropdown}
-          open={open}
-          value={building}
-          items={buildings}
-          setOpen={setOpen}
-          setValue={setBuilding}
-        />
+        <TextInput style={styles.textInput} placeholder="Description" />
       </View>
-      <Button
-        title="Press me"
-        onPress={() => addEvent()}
+    
+      
+    
+    
+      <Text style={styles.text}>Date and Time:</Text>
+      <TextInput style={styles.textInput} placeholder="Event time and date" />
+    
+      <Text style={styles.text}>Building:</Text>
+      <DropDownPicker
+        placeholder="Choose one"
+        style={styles.dropdown}
+        containerStyle={styles.dropdown}
+        open={open}
+        value={value}
+        items={buildings}
+        setOpen={setOpen}
+        setValue={setValue}
       />
+
     </View>
   );
 }

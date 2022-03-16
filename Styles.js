@@ -4,11 +4,14 @@ import { ScreenHeight, ScreenWidth } from "react-native-elements/dist/helpers";
 var byuBlue = "#151561";
 
 export const styles = StyleSheet.create({
+  text: {
+    fontFamily: 'Montserrat_500Medium'
+  },
   container: {
     flex: 1,
     backgroundColor: "#fff",
     alignItems: "center",
-    justifyContent: "center",
+    paddingTop: 20
   },
   header: {
     fontSize: 26,
@@ -16,11 +19,15 @@ export const styles = StyleSheet.create({
   rowContainer: {
     display: "flex",
     flexDirection: "row",
-    padding: 8,
+    padding: 10,
+    marginRight: 15,
+    marginLeft: 15,
+    marginTop: 5
   },
   textInput: {
     flex: 1,
     borderBottomWidth: 1,
+    fontFamily: 'Montserrat_500Medium'
   },
   headerButton: {
     padding: 4,

@@ -14,8 +14,38 @@ import { EventDetailView } from "./screens/EventDetailView";
 import { MapViewPage } from "./screens/MapViewPage";
 
 const AppStack = createStackNavigator();
-const HomeTabs = createBottomTabNavigator();
-
+const HomeTabs = createBottomTabNavigator ();
+  // {
+  // List : {
+  //   screen : ListView,
+  //   navigationOptions : ()=> ({
+  //     tabBarIcon : ({tintColor}) => (
+  //       <Icon
+  //         name = "list"
+  //         color = {tintColor}
+  //         size = {24}
+  //       />
+  //     )
+  //   })
+  // },
+  // Map : {
+  //   screen : MapViewPage,
+  //   navigationOptions : ()=> ({
+  //     tabBarIcon : ({tintColor}) => (
+  //       <Icon
+  //         name = "map"
+  //         color = {tintColor}
+  //         size = {24}
+  //       />
+  //       )
+  //     })
+  //   }
+  // }, {
+  //   tabBarOptions : {
+  //     activeTintColor : "blue",
+  //     inactiveTineColor : "grey"
+  //   }
+  // });
 
 // Todo: figure out how to make the icons on the tab bar have an active tint
 
@@ -27,7 +57,7 @@ function Home() {
         component={ListView}
         options={{
           headerShown: false,
-          tabBarIcon : ({tintColor, size}) => (
+          tabBarIcon : ({tintColor}) => (
             <Icon name = "list" color = {tintColor} size = {28} />
           ),
         }}
@@ -37,7 +67,7 @@ function Home() {
         component={MapViewPage}
         options={{
           headerShown: false,
-          tabBarIcon : ({tintColor, size}) => (
+          tabBarIcon : ({tintColor}) => (
             <Icon name = "map" color = {tintColor} size = {28} />
           ),
         }}

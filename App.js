@@ -19,59 +19,63 @@ const AppStack = createStackNavigator();
 const HomeTabs = createBottomTabNavigator();
 
 function Home() {
-  return (
-    <HomeTabs.Navigator>
-      
-      <HomeTabs.Screen
-        name="List"
-        component={ListView}
-        options={{ headerShown: false }}
-      />
-      <HomeTabs.Screen
-        name="Map"
-        component={MapViewPage}
-        options={{ headerShown: false }}
-      />
-    </HomeTabs.Navigator>
-  );
+    return (
+        <HomeTabs.Navigator
+            // tabBarOptions was all that was needed to be added to the navigator component to make the icons have active tinting
+            tabBarOptions={{
+                activeTintColor: 'blue', // maybe change this color, the blue is a little annoying on the eyes
+            }}
+        >
+            <HomeTabs.Screen
+                name="List"
+                component={ListView}
+                options={{
+                    headerShown: false,
+                    tabBarIcon: ({ color }) => (
+                        <Icon name="list" color={color} size={28} />
+                    )
+                }}
+            />
+            <HomeTabs.Screen
+                name="Map"
+                component={MapViewPage}
+                options={{
+                    headerShown: false,
+                    tabBarIcon: ({ color }) => (
+                        <Icon name="map" color={color} size={28} />
+                    ),
+                }}
+            />
+        </HomeTabs.Navigator>
+    );
 }
 
 function MapView() {
-  return MapViewPage;
+    return MapViewPage;
 }
 
 export default function App() {
-  return (
-    <NavigationContainer>
-      <AppStack.Navigator>
-        <AppStack.Screen
-          name="Home"
-          component={Home}
-          options={({ navigation }) => ({
-            headerTitle: "BYUFreeFood",
-            headerStyle: styles.headerStyle,
-            headerTitleStyle: styles.headerTitleStyle,
-            headerRight: () => (
-              <Button
-                style={styles.headerButton}
-                icon={<Icon name="plus" size={24} color="white" />}
-                type="clear"
-                onPress={() => navigation.navigate("AddEvent")}
-              />
-            ),
-          })}
-        />
-        <AppStack.Screen
-          name="AddEvent"
-          component={AddEventView}
-          options={{ title: "Add Event" }}
-        />
-        <AppStack.Screen
-          name="EventDetailView"
-          component={EventDetailView}
-          options={{ title: "Detail View" }}
-        />
-      </AppStack.Navigator>
-    </NavigationContainer>
-  );
+    return (
+        <NavigationContainer>
+            <AppStack.Navigator>
+                <AppStack.Screen
+                    name="Home"
+                    component={Home}
+                    options={({ navigation }) => ({
+                        headerTitle: "BYUFreeFood",
+                        headerRight: () => (
+                            <Button
+                                style={styles.headerButton}
+                                icon={<Icon name="plus" size={24} color="blue" />}
+                                type="clear"
+                                onPress={() => navigation.navigate("AddEvent")}
+                            />
+                        ),
+                    })}
+                />
+                <AppStack.Screen name="AddEvent" component={AddEventView} />
+                <AppStack.Screen name="EventDetailView" component={EventDetailView} />
+            </AppStack.Navigator>
+        </NavigationContainer>
+    );
 }

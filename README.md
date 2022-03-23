@@ -33,7 +33,23 @@ else {
 `git push` This adds your committed changes to your remote branch.
 }
 
-Once you are done making your own changes and you are ready to put them in the main branch, go to github.com and open a pull-request from your branch. Get a club officer to review it and they will merge it into the master branch!!
+**Once you are done making your own changes and you are ready to put them in the main branch...** 
+
+First you'll need to merge master into your branch. Use the following series of commands:
+
+`git checkout master`
+
+`git pull`
+
+`git checkout <branch_name_here>`
+
+`git merge master`
+
+You may get merge conflicts here. If you do, fix them, add and commit your changes as explained above.
+
+`git push`
+
+Go to github.com and open a pull-request from your branch. Get a club officer to review it and they will merge it into the master branch!!
 
 If for some reason you want to reset everything you've done, use the following command.
 THIS WILL ERASE ALL WORK UNTIL THE PREVIOUS GIT PULL

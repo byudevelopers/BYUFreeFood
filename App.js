@@ -12,49 +12,15 @@ import { Button } from "react-native-elements";
 import Icon from "react-native-vector-icons/FontAwesome";
 import { EventDetailView } from "./screens/EventDetailView";
 import { MapViewPage } from "./screens/MapViewPage";
-// import { Text, View, Image, TouchablOpacity } from 'react-native'
 
 const AppStack = createStackNavigator();
 const HomeTabs = createBottomTabNavigator();
-// {
-// List : {
-//   screen : ListView,
-//   navigationOptions : ()=> ({
-//     tabBarIcon : ({tintColor}) => (
-//       <Icon
-//         name = "list"
-//         color = {tintColor}
-//         size = {24}
-//       />
-//     )
-//   })
-// },
-// Map : {
-//   screen : MapViewPage,
-//   navigationOptions : ()=> ({
-//     tabBarIcon : ({tintColor}) => (
-//       <Icon
-//         name = "map"
-//         color = {tintColor}
-//         size = {24}
-//       />
-//       )
-//     })
-//   }
-// }, {
-//   tabBarOptions : {
-//     activeTintColor : "blue",
-//     inactiveTineColor : "grey"
-//   }
-// });
-
-// Todo: figure out how to make the icons on the tab bar have an active tint
 
 function Home() {
     return (
         <HomeTabs.Navigator
             tabBarOptions={{
-                activeTintColor: 'blue',
+                activeTintColor: 'blue', // maybe change this color, the blue is a little annoying on the eyes
             }}
         >
             <HomeTabs.Screen
@@ -80,19 +46,6 @@ function Home() {
         </HomeTabs.Navigator>
     );
 }
-
-// tabBarOptions: {
-//         activeTintColor: "#006600",
-//       },
-//       tabBarIcon: (tabInfo) => {
-//         return (
-//           <Ionicons
-//             name="md-home"
-//             size={24}
-//             color={tabInfo.focused ? "#006600" : "#8e8e93"}
-//           />
-//         );
-//       },
 
 function MapView() {
     return MapViewPage;

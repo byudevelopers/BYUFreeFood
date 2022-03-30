@@ -10,6 +10,8 @@ import {Calendar, CalendarList, Agenda} from 'react-native-calendars';
 import {LocaleConfig} from 'react-native-calendars';
 import { todayString } from 'react-native-calendars/src/expandableCalendar/commons';
 
+import buildings from '../buildings';
+
 LocaleConfig.locales['fr'] = {
   monthNames: [
     'January',
@@ -35,11 +37,13 @@ LocaleConfig.defaultLocale = 'fr';
 export function AddEventView({ navigation }) {
     const [open, setOpen] = useState(false);
     const [value, setValue] = useState(null);
-    const buildings = [
-      {label: 'TNRB', value: 'TNRB'},
-      {label: 'JFSB', value: 'JFSB'}
-    ];
+    const [currentMonth, setCurrentMonth] = useState(new Date().getMonth());
+    //const buildings = [
+    //  {label: 'TNRB', value: 'TNRB'},
+    //  {label: 'JFSB', value: 'JFSB'}
+    //];
     var todaysDate = new Date().getFullYear() + "-" + parseInt(new Date().getMonth()+1).toString().padStart(2, '0') + "-" + (new Date().getDate()).toString().padStart(2, '0');
+    //var currentMonth = newDate().getMonth();
     
 
     return (
@@ -54,7 +58,7 @@ export function AddEventView({ navigation }) {
           multiline={true}
           placeholder="Description"
           style={[addEventStyles.textInput, addEventStyles.text, addEventStyles.descriptionTextBox]}/>
-          <Text style={addEventStyles.calendarTitle}>Calendar Month Here</Text>
+          <Text style={addEventStyles.calendarTitle}> {LocaleConfig.locales['fr'].monthNames[currentMonth]}</Text>
           <Calendar
 
             style={[addEventStyles.calendar]}
@@ -80,6 +84,8 @@ export function AddEventView({ navigation }) {
             // Handler which gets executed when visible month changes in calendar. Default = undefined
             onMonthChange={month => {
               console.log('month changed', month);
+              //currentMonth = "Feb"; // read-only
+              setCurrentMonth(month.month - 1);
             }}
             // Hide month navigation arrows. Default = false
             hideArrows={true}
@@ -139,9 +145,14 @@ export function AddEventView({ navigation }) {
       height: "10%",
     },
     calendar: {
-      padding: 100 //Arbitrary - change if needed
     }, 
     calendarTitle: {
       //Add style for calendar title here
+      marginTop: 100, //Arbitrary - change if needed
+      fontSize: 28,
+      //margin: "auto",
+      textAlign: 'center',
+      //fontWeight: 'bold',
+      //border: "3px solid red"
     }
   });

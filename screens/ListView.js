@@ -7,10 +7,6 @@ const customData = require("../fake_data.json");
 export function ListView() {
   const [open, setOpen] = useState(false);
   const [value, setValue] = useState(null);
-  const buildings = [
-    { label: "TNRB", value: "TNRB" },
-    { label: "JFSB", value: "JFSB" },
-  ];
   return (
     <View style={styles.listContainer}>
       <FlatList

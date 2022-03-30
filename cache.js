@@ -17,6 +17,7 @@ export class Cache {
     }
 
     async retrieveEvents(refreshEvents) {
+        console.log("getting events");
         this.events = []
         const querySnapshot = await getDocs(collection(db, 'events'));
 
@@ -27,8 +28,8 @@ export class Cache {
     } 
 
     getAllEvents(refreshEvents) {
-        console.log("getting events");
-        if (this.eventTimer == null || Math.abs((new Date().getTime() - this.eventTimer.getTime()) / 1000) > 30) {
+        console.log("button pressed");
+        if (this.eventTimer == null || Math.abs((new Date().getTime() - this.eventTimer.getTime()) / 1000) > 1) {
             this.retrieveEvents(refreshEvents);
             this.eventTimer = new Date();
         } else if (this.renderTimer == null || Math.abs((new Date().getTime() - this.renderTimer.getTime()) / 1000) > 1) {

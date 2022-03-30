@@ -7,28 +7,20 @@ import { useNavigation } from "@react-navigation/core";
 import { Divider } from "react-native-elements/dist/divider/Divider"; 
 import { getFirebaseEvents } from "../EventClient";
 import { Cache } from "../cache";
+import FirebaseContext from "../FirebaseContext";
 
-//const customData = require("../fake_data.json");
 const ListStack = createStackNavigator();
-//const [customData, setCustomData] = useState({});
 
 
-export function ListView() {
-  const [open, setOpen] = useState(false);
-  const [value, setValue] = useState(null);
-  const [customData, setCustomData] = useState({});
+export class ListView extends React.Component {
+  static contextType = FirebaseContext;
 
-  const buildings = [
-    { label: "TNRB", value: "TNRB" },
-    { label: "JFSB", value: "JFSB" },
-  ];
-  const navigation = useNavigation();
-  Cache.getInstance().getAllEvents(setCustomData);
-
-  return (
+  render() {
+    let value = this.context;
+    return(
     <View style={styles.listContainer}>
       <FlatList
-        data={customData}
+        data={value}
         renderItem={({ item }) => (
           <TouchableWithoutFeedback
             onPress={() => navigation.navigate("EventDetailView", { item })}>
@@ -41,5 +33,6 @@ export function ListView() {
         )}
       />
     </View>
-  );
+    );
+  }
 }

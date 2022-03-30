@@ -1,5 +1,5 @@
 import { StatusBar } from "expo-status-bar";
-import React from "react";
+import React, { useState } from "react";
 import { FlatList, StyleSheet, Text, View } from "react-native";
 
 import { styles } from "./Styles";
@@ -13,12 +13,15 @@ import Icon from "react-native-vector-icons/FontAwesome";
 import { EventDetailView } from "./screens/EventDetailView";
 import { MapViewPage } from "./screens/MapViewPage";
 import { getFirebaseEvents } from "./EventClient";
+import { Cache } from "./cache";
 
+import FirebaseContext from './FirebaseContext';
 
 const AppStack = createStackNavigator();
 const HomeTabs = createBottomTabNavigator();
 
 function Home() {
+  console.log("updating home");
   return (
     <HomeTabs.Navigator>
       
@@ -26,11 +29,13 @@ function Home() {
         name="List"
         component={ListView}
         options={{ headerShown: false }}
+
       />
       <HomeTabs.Screen
         name="Map"
         component={MapViewPage}
         options={{ headerShown: false }}
+
       />
     </HomeTabs.Navigator>
   );
@@ -40,8 +45,25 @@ function MapView() {
   return MapViewPage;
 }
 
-export default function App() {
+export default class App extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      data: {}
+    };
+    console.log("creating app");
+  }
+
+  setData = (newData) => {
+    console.log("setting data");
+    this.setState({
+      data: newData
+    })
+  }
+
+  render() {
   return (
+    <FirebaseContext.Provider value = {this.state.data}>
     <NavigationContainer>
       <AppStack.Navigator>
         <AppStack.Screen
@@ -59,6 +81,14 @@ export default function App() {
                 onPress={() => navigation.navigate("AddEvent")}
               />
             ),
+            headerLeft: () => (
+              <Button
+                style={styles.headerButton}
+                icon={<Icon name="refresh" size={24} color="white" />}
+                type="clear"
+                onPress={() => {Cache.getInstance().getAllEvents(this.setData)}}
+              />
+            ),
           })}
         />
         <AppStack.Screen
@@ -73,5 +103,7 @@ export default function App() {
         />
       </AppStack.Navigator>
     </NavigationContainer>
+    </FirebaseContext.Provider>
   );
+        }
 }

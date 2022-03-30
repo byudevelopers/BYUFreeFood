@@ -21,9 +21,8 @@ const HomeTabs = createBottomTabNavigator();
 function Home() {
     return (
         <HomeTabs.Navigator
-            // tabBarOptions was all that was needed to be added to the navigator component to make the icons have active tinting
             tabBarOptions={{
-                activeTintColor: 'blue', // maybe change this color, the blue is a little annoying on the eyes
+                activeTintColor: 'blue'
             }}
         >
             <HomeTabs.Screen

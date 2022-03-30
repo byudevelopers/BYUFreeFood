@@ -28,12 +28,10 @@ export default class App extends React.Component {
     this.state = {
       data: {}
     };
-    console.log("creating app");
     Cache.getInstance().getAllEvents(this.setData)
   }
 
   setData = (newData) => {
-    console.log("setting data");
     this.setState({
       data: newData
     })
@@ -78,36 +76,36 @@ export default class App extends React.Component {
 
 function Home() {
   return (
-      <HomeTabs.Navigator
-          // tabBarOptions was all that was needed to be added to the navigator component to make the icons have active tinting
-          tabBarOptions={{
-              activeTintColor: 'blue', // maybe change this color, the blue is a little annoying on the eyes
-          }}
-      >
-          <HomeTabs.Screen
-              name="List"
-              component={ListView}
-              options={{
-                  headerShown: false,
-                  tabBarIcon: ({ color }) => (
-                      <Icon name="list" color={color} size={28} />
-                  )
-              }}
-          />
-          <HomeTabs.Screen
-              name="Map"
-              component={MapViewPage}
-              options={{
-                  headerShown: false,
-                  tabBarIcon: ({ color }) => (
-                      <Icon name="map" color={color} size={28} />
-                  ),
-              }}
-          />
-      </HomeTabs.Navigator>
-  );
+    <HomeTabs.Navigator
+      // tabBarOptions was all that was needed to be added to the navigator component to make the icons have active tinting
+      tabBarOptions={{
+        activeTintColor: 'blue', // maybe change this color, the blue is a little annoying on the eyes
+      }}
+    >
+    <HomeTabs.Screen
+      name="List"
+      component={ListView}
+      options={{
+        headerShown: false,
+        tabBarIcon: ({ color }) => (
+          <Icon name="list" color={color} size={28} />
+        )
+      }}
+    />
+    <HomeTabs.Screen
+      name="Map"
+      component={MapViewPage}
+      options={{
+        headerShown: false,
+        tabBarIcon: ({ color }) => (
+          <Icon name="map" color={color} size={28} />
+        ),
+      }}
+    />
+    </HomeTabs.Navigator>
+);
 }
 
 function MapView() {
-  return MapViewPage;
+    return MapViewPage;
 }

@@ -10,13 +10,11 @@ export class Cache {
         
         if(this.instance == null) {
             this.instance = new Cache();
-            console.log("creating cache");
         }
         return this.instance;
     }
 
     async retrieveEvents(refreshEvents) {
-        console.log("getting events");
         this.events = []
         const querySnapshot = await getDocs(collection(db, 'events'));
 
@@ -28,7 +26,6 @@ export class Cache {
     } 
 
     getAllEvents(refreshEvents) {
-        console.log("button pressed");
         if (this.eventTimer == null || Math.abs((new Date().getTime() - this.eventTimer.getTime()) / 1000) > 30) {
             this.retrieveEvents(refreshEvents);
             this.eventTimer = new Date();

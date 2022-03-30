@@ -12,8 +12,6 @@ import FirebaseContext from "../FirebaseContext";
 const ListStack = createStackNavigator();
 
 export function ListView() {
-  const [open, setOpen] = useState(false);
-  const [value, setValue] = useState(null);
   const buildings = [
     { label: "TNRB", value: "TNRB" },
     { label: "JFSB", value: "JFSB" },

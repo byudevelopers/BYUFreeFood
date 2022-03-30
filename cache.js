@@ -4,7 +4,6 @@ import { collection, getDocs, doc, setDoc } from 'firebase/firestore'
 export class Cache {
     static instance = null;
     static eventTimer = null;
-    static renderTimer = null;
     static events = []
 
     static getInstance() {
@@ -25,16 +24,16 @@ export class Cache {
             this.events.push(doc.data());
         });
         refreshEvents(this.events);
+        return this.events;
     } 
 
     getAllEvents(refreshEvents) {
         console.log("button pressed");
-        if (this.eventTimer == null || Math.abs((new Date().getTime() - this.eventTimer.getTime()) / 1000) > 1) {
+        if (this.eventTimer == null || Math.abs((new Date().getTime() - this.eventTimer.getTime()) / 1000) > 30) {
             this.retrieveEvents(refreshEvents);
             this.eventTimer = new Date();
-        } else if (this.renderTimer == null || Math.abs((new Date().getTime() - this.renderTimer.getTime()) / 1000) > 1) {
-            this.renderTimer = new Date();
-            refreshEvents(this.events);
+        } else {
+            console.log("not enough time has passed to refresh");
         }
     }
 }

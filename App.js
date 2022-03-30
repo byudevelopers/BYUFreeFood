@@ -14,36 +14,13 @@ import { EventDetailView } from "./screens/EventDetailView";
 import { MapViewPage } from "./screens/MapViewPage";
 import { getFirebaseEvents } from "./EventClient";
 import { Cache } from "./cache";
+import { LogBox } from 'react-native';
 
 import FirebaseContext from './FirebaseContext';
 
 const AppStack = createStackNavigator();
 const HomeTabs = createBottomTabNavigator();
-
-function Home() {
-  console.log("updating home");
-  return (
-    <HomeTabs.Navigator>
-      
-      <HomeTabs.Screen
-        name="List"
-        component={ListView}
-        options={{ headerShown: false }}
-
-      />
-      <HomeTabs.Screen
-        name="Map"
-        component={MapViewPage}
-        options={{ headerShown: false }}
-
-      />
-    </HomeTabs.Navigator>
-  );
-}
-
-function MapView() {
-  return MapViewPage;
-}
+LogBox.ignoreLogs(['Setting a timer']);
 
 export default class App extends React.Component {
   constructor(props) {
@@ -52,6 +29,7 @@ export default class App extends React.Component {
       data: {}
     };
     console.log("creating app");
+    Cache.getInstance().getAllEvents(this.setData)
   }
 
   setData = (newData) => {
@@ -62,48 +40,74 @@ export default class App extends React.Component {
   }
 
   render() {
+    return (
+      <FirebaseContext.Provider value = {this.state.data}>
+        <NavigationContainer>
+          <AppStack.Navigator>
+            <AppStack.Screen
+              name="Home"
+              component={Home}
+              options={({ navigation }) => ({
+                headerTitle: "BYUFreeFood",
+                headerRight: () => (
+                  <Button
+                    style={styles.headerButton}
+                    icon={<Icon name="plus" size={24} color="blue" />}
+                    type="clear"
+                    onPress={() => navigation.navigate("AddEvent")}
+                  />
+                ),
+                headerLeft: () => (
+                  <Button
+                    style={styles.headerButton}
+                    icon={<Icon name="refresh" size={24} color="blue" />}
+                    type="clear"
+                    onPress={() => {Cache.getInstance().getAllEvents(this.setData)}}
+                  />
+                ),
+              })}
+            />
+            <AppStack.Screen name="AddEvent" component={AddEventView} />
+            <AppStack.Screen name="EventDetailView" component={EventDetailView} />
+          </AppStack.Navigator>
+        </NavigationContainer>
+      </FirebaseContext.Provider>
+    );
+  }
+}
+
+function Home() {
   return (
-    <FirebaseContext.Provider value = {this.state.data}>
-    <NavigationContainer>
-      <AppStack.Navigator>
-        <AppStack.Screen
-          name="Home"
-          component={Home}
-          options={({ navigation }) => ({
-            headerTitle: "BYUFreeFood",
-            headerStyle: styles.headerStyle,
-            headerTitleStyle: styles.headerTitleStyle,
-            headerRight: () => (
-              <Button
-                style={styles.headerButton}
-                icon={<Icon name="plus" size={24} color="white" />}
-                type="clear"
-                onPress={() => navigation.navigate("AddEvent")}
-              />
-            ),
-            headerLeft: () => (
-              <Button
-                style={styles.headerButton}
-                icon={<Icon name="refresh" size={24} color="white" />}
-                type="clear"
-                onPress={() => {Cache.getInstance().getAllEvents(this.setData)}}
-              />
-            ),
-          })}
-        />
-        <AppStack.Screen
-          name="AddEvent"
-          component={AddEventView}
-          options={{ title: "Add Event" }}
-        />
-        <AppStack.Screen
-          name="EventDetailView"
-          component={EventDetailView}
-          options={{ title: "Detail View" }}
-        />
-      </AppStack.Navigator>
-    </NavigationContainer>
-    </FirebaseContext.Provider>
+      <HomeTabs.Navigator
+          // tabBarOptions was all that was needed to be added to the navigator component to make the icons have active tinting
+          tabBarOptions={{
+              activeTintColor: 'blue', // maybe change this color, the blue is a little annoying on the eyes
+          }}
+      >
+          <HomeTabs.Screen
+              name="List"
+              component={ListView}
+              options={{
+                  headerShown: false,
+                  tabBarIcon: ({ color }) => (
+                      <Icon name="list" color={color} size={28} />
+                  )
+              }}
+          />
+          <HomeTabs.Screen
+              name="Map"
+              component={MapViewPage}
+              options={{
+                  headerShown: false,
+                  tabBarIcon: ({ color }) => (
+                      <Icon name="map" color={color} size={28} />
+                  ),
+              }}
+          />
+      </HomeTabs.Navigator>
   );
-        }
+}
+
+function MapView() {
+  return MapViewPage;
 }

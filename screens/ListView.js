@@ -11,28 +11,34 @@ import FirebaseContext from "../FirebaseContext";
 
 const ListStack = createStackNavigator();
 
+export function ListView() {
+  const [open, setOpen] = useState(false);
+  const [value, setValue] = useState(null);
+  const buildings = [
+    { label: "TNRB", value: "TNRB" },
+    { label: "JFSB", value: "JFSB" },
+  ];
+  const navigation = useNavigation();
 
-export class ListView extends React.Component {
-  static contextType = FirebaseContext;
-
-  render() {
-    let value = this.context;
-    return(
-    <View style={styles.listContainer}>
-      <FlatList
-        data={value}
-        renderItem={({ item }) => (
-          <TouchableWithoutFeedback
-            onPress={() => navigation.navigate("EventDetailView", { item })}>
-            <View>
-              
-              <Text style={styles.eventListItem}>{item.eventName}</Text>
-              <Divider style={styles.listDivider}/>
-            </View>
-          </TouchableWithoutFeedback>
-        )}
-      />
-    </View>
-    );
-  }
+  return (
+    <FirebaseContext.Consumer>
+      {value=> (
+        <View style={styles.listContainer}>
+          <FlatList
+            data={value}
+            renderItem={({ item }) => (
+              <TouchableWithoutFeedback
+                onPress={() => navigation.navigate("EventDetailView", { item })}>
+                <View>
+                  
+                  <Text style={styles.eventListItem}>{item.eventName}</Text>
+                  <Divider style={styles.listDivider}/>
+                </View>
+              </TouchableWithoutFeedback>
+            )}
+          />
+        </View>)
+      }
+    </FirebaseContext.Consumer>
+  );
 }

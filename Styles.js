@@ -1,5 +1,7 @@
-import { StyleSheet } from "react-native";
+import { Text, StyleSheet } from "react-native";
 import { ScreenHeight, ScreenWidth } from "react-native-elements/dist/helpers";
+
+var byuBlue = "#151561";
 
 export const styles = StyleSheet.create({
   container: {
@@ -29,15 +31,42 @@ export const styles = StyleSheet.create({
   // list view
   eventListItem: {
     padding: 10,
-    backgroundColor: "#5588aa",
+    backgroundColor: "#fff",
   },
   listDivider: {
     height: 1,
     width: ScreenWidth,
-    backgroundColor: "#000",
+    padding: 5,
+    backgroundColor: "#fff",
   },
   listContainer: {
     flex: 1,
   },
   // end list view
+  // event detail view
+  EventDetailView_infoContainer: {
+    display: "flex",
+    alignItems: "flex-start",
+    padding: 10,
+    width: "100%",
+    height: "100%",
+    backgroundColor: "#fff",
+  },
+  EventDetailView_detailContainer: {
+    display: "flex",
+    flexDirection: "row",
+    justifyContent: "space-between",
+    width: "100%",
+  },
+  headerStyle: {
+    backgroundColor: byuBlue,
+  },
+  headerTitleStyle: {
+    color: "#fff",
+  },
+
+  //home footer
+  homeTabs: {
+    backgroundColor: byuBlue,
+  },
 });

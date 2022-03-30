@@ -3,6 +3,7 @@ import { View, StyleSheet,Image } from 'react-native';
 import MapView, { Marker } from 'react-native-maps';
 import { styles } from '../Styles';
 import { buildings } from '../buildings';
+import FirebaseContext from "../FirebaseContext";
 
 
 export function MapViewPage(){
@@ -14,20 +15,19 @@ export function MapViewPage(){
     longitudeDelta: 0.01,
   });
 
-  //TODO: Parse fake_data.json and filter the buildingsArray so only the buildings from the fake_data appear on the map
-
-  const buildingsArray = Object.values(buildings);
-  var markers = buildingsArray.map(location => (
-    <MapView.Marker coordinate={location.coordinate} title={location.title} description={location.abbreviation}/> 
-  ));
-
   return (
     <View style={styles.container}>
       <MapView
         style={{ alignSelf: 'stretch', height: '100%' }}
         region={mapRegion}
+        showsUserLocation={true}
       >
-        {markers}
+        {buildings ? buildings.map((building) => (
+          <Marker coordinate={building.coordinate} title={building.title} description={building.key}>
+
+          </Marker>
+        ))
+        : null}
       </MapView>
     </View>
   );

@@ -1,23 +1,37 @@
 import React, { useState } from "react";
-import { FlatList, Text, View } from "react-native";
+import { FlatList, Text, View, TouchableWithoutFeedback } from "react-native";
 import { Button } from "react-native-elements/dist/buttons/Button";
 import { styles } from "../Styles";
-const customData = require("../fake_data.json");
+import { createStackNavigator } from "@react-navigation/stack";
+import { useNavigation } from "@react-navigation/core";
+import { Divider } from "react-native-elements/dist/divider/Divider"; 
+import { getFirebaseEvents } from "../EventClient";
+import { Cache } from "../cache";
+import FirebaseContext from "../FirebaseContext";
+
+const ListStack = createStackNavigator();
 
 export function ListView() {
-  const [open, setOpen] = useState(false);
-  const [value, setValue] = useState(null);
+  const navigation = useNavigation();
   return (
-    <View style={styles.listContainer}>
-      <FlatList
-        data={customData}
-        renderItem={({ item }) => (
-          <View>
-            <View style={styles.listDivider} />
-            <Text style={styles.eventListItem}>{item.eventName}</Text>
-          </View>
-        )}
-      />
-    </View>
+    <FirebaseContext.Consumer>
+      {value=> (
+        <View style={styles.listContainer}>
+          <FlatList
+            data={value}
+            renderItem={({ item }) => (
+              <TouchableWithoutFeedback
+                onPress={() => navigation.navigate("EventDetailView", { item })}>
+                <View>
+                  
+                  <Text style={styles.eventListItem}>{item.eventName}</Text>
+                  <Divider style={styles.listDivider}/>
+                </View>
+              </TouchableWithoutFeedback>
+            )}
+          />
+        </View>)
+      }
+    </FirebaseContext.Consumer>
   );
 }

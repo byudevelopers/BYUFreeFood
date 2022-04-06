@@ -1,14 +1,59 @@
 import React, { useState } from "react";
-import { Text, View } from "react-native";
+import { Text, View, Button, StyleSheet, Pressable } from "react-native";
 import { styles } from "../Styles";
 import { useNavigationParam } from "@react-navigation/native";
 import { Divider } from "react-native-elements/dist/divider/Divider";
 
+
+const styless = StyleSheet.create({
+  button: {
+    alignItems: 'center',
+    justifyContent: 'center',
+    paddingVertical: 12,
+    paddingHorizontal: 12,
+    marginEnd: 12,
+    borderRadius: 4,
+    elevation: 3,
+    backgroundColor: 'white',
+  },
+  text: {
+    fontSize: 16,
+    lineHeight: 21,
+    fontWeight: 'bold',
+    letterSpacing: 0.25,
+    color: 'white',
+  },
+});
+
+
 export function EventDetailView(props) {
-  const [open, setOpen] = useState(false);
-  const [value, setValue] = useState(null);
+  const [isSaved, setIsSaved] = useState("🤍");
+
   const event = props.route.params.item;
   console.log(event);
+  
+  const eventName = event.eventName;
+
+  props.navigation.setOptions({
+    headerTitle: eventName,
+    headerRight: () => (
+      <Pressable
+        style={styless.button}
+        onPress={() => {
+          if (isSaved == "💙") {
+            setIsSaved("🤍");
+            alert('Saving an event still needs to be implemented');
+          } else {
+            setIsSaved("💙");
+          }
+
+        }}
+      >
+        <Text>{isSaved}</Text>
+      </Pressable>
+    ),
+  });
+
   return (
     <View style={styles.EventDetailView_infoContainer}>
       <View style={styles.EventDetailView_detailContainer}>

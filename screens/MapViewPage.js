@@ -21,7 +21,7 @@ export function MapViewPage() {
         setBottomSheetVisible(!bottomSheetVisible);
     };
 
-    const [selectedBuilding, setSelectedBuilding] = useState({ title: "", });
+    const [selectedBuilding, setSelectedBuilding] = useState(null);
 
     console.log("Testing logs!");
     return (
@@ -58,7 +58,7 @@ export function MapViewPage() {
             >
                 {/*Bottom Sheet inner View*/}
                 <View style={mapStyles.bottomNavigationView}>
-                    <Text>{selectedBuilding.title}</Text>
+                    <Text>{selectedBuilding ? selectedBuilding.title : ""}</Text>
                     <View
                         style={{
                             flex: 1,

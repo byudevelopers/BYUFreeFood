@@ -10,9 +10,11 @@ import DateTimePicker from '@react-native-community/datetimepicker';
 export function AddEventView() {
   const [open, setOpen] = useState(false);
   const [eventName, setEventName] = useState("");
+  const [food, setFood] = useState("");
   const [clubName, setClubName] = useState("");
   const [timeDate, setTimeDate] = useState("");
   const [building, setBuilding] = useState("");
+  const [description, setDescription] = useState("");
   const [date, setDate] = useState(new Date());
   const [mode, setMode] = useState('date');
   const [show, setShow] = useState(false);
@@ -24,6 +26,7 @@ export function AddEventView() {
     setDate(currentDate);
 
     let tempDate = new Date(currentDate);
+    setTimeDate(currentDate.toString())
     let fDate = tempDate.getDate() + '/' + (tempDate.getMonth() + 1) + '/' + tempDate.getFullYear();
     console.log(currentDate.toString())
     let fTime = tempDate.getHours() + ':' + tempDate.getMinutes()
@@ -46,7 +49,9 @@ export function AddEventView() {
     event.building = building;
     event.eventName = eventName;
     event.clubName = clubName;
-    event.timeDate = timeDate
+    event.timeDate = timeDate;
+    event.description = description;
+    event.food = food;
     console.log(uploadEvent(event))
     console.log(getFirebaseEvents());
   }
@@ -54,13 +59,13 @@ export function AddEventView() {
   return (
     <View style={styles.container}>
       <View style={styles.rowContainer}>
-        <TextInput style={styles.textInput} placeholder="Your event name"/>
+        <TextInput style={styles.textInput} placeholder="Your event name" onChange={(value) => setEventName(value.nativeEvent.text)}/>
       </View>
       <View style={styles.rowContainer}>
-        <TextInput style={styles.textInput} placeholder="Your club/organization" />
+        <TextInput style={styles.textInput} placeholder="Your club/organization" onChange={(value) => setClubName(value.nativeEvent.text)} />
       </View>
       <View style={styles.rowContainer}>
-        <TextInput style={styles.textInput} placeholder="Food provided" />
+        <TextInput style={styles.textInput} placeholder="Food provided" onChange={(value) => setFood(value.nativeEvent.text)}/>
       </View>
       <DropDownPicker
         placeholder="Choose a building"
@@ -101,8 +106,9 @@ export function AddEventView() {
         onChange={onChange}
         />
       )}
-      
-
+    <View>
+      <Button title="submit" onPress={() => addEvent()}></Button>
+    </View>
     </View>
   );
 }
@@ -125,6 +131,7 @@ const UselessTextInputMultiline = () => {
         onChangeText={text => onChangeText(text)}
         value={value}
         style={{padding: 10}}
+        onChange={(value) => setDescription(value.nativeEvent.text)}
       />
     </View>
   );

@@ -4,8 +4,9 @@ import { ScreenHeight, ScreenWidth } from "react-native-elements/dist/helpers";
 var byuBlue = "#151561";
 
 export const styles = StyleSheet.create({
+  //Add event view
   text: {
-    fontFamily: 'Montserrat_500Medium'
+    
   },
   container: {
     flex: 1,
@@ -27,14 +28,30 @@ export const styles = StyleSheet.create({
   textInput: {
     flex: 1,
     borderBottomWidth: 1,
-    fontFamily: 'Montserrat_500Medium'
+    
+    
+  },
+  textBox: {
+    flex: 1,
+    borderWidth: 1,
+    borderRadius: 10,
+    marginTop: 20,
+    marginBottom: 20,
+    paddingLeft: 5
   },
   headerButton: {
     padding: 4,
   },
   dropdown: {
-    flex: 1,
+    width: 350,
+    height: 30,
+    margin: 20
   },
+  datePicker: {
+    backgroundColor: "#bb0000",
+    color: "#bb0000"
+  },
+  //End add event view
   // list view
   eventListItem: {
     padding: 10,

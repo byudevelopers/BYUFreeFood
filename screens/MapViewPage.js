@@ -4,6 +4,7 @@ import { BottomSheet } from 'react-native-btr';
 import { SocialIcon } from 'react-native-elements';
 import MapView, { Marker } from 'react-native-maps';
 import { styles } from '../Styles';
+import FirebaseContext from "../FirebaseContext";
 import { buildings } from '../buildings';
 
 
@@ -184,140 +185,144 @@ export function MapViewPage() {
     setBottomSheetVisible(!bottomSheetVisible);
   };
 
-  const [selectedBuilding, setSelectedBuilding] = useState({title: "",});
+  const [selectedBuilding, setSelectedBuilding] = useState({ title: "", });
 
   console.log("Testing logs!");
   return (
-    <View style={styles.container}>
-      <MapView
-        style={{ alignSelf: 'stretch', height: '100%' }}
-        region={mapRegion}
-        showsUserLocation={true}
-        onMarkerSelect={(event) => {
-          console.log(event.id);
-          if (!bottomSheetVisible) {
-            toggleBottomSheetView();
-          }
-        }}
-      >
+    <FirebaseContext.Consumer>
+      { data => (
+        <View style={styles.container}>
+          <MapView
+            style={{ alignSelf: 'stretch', height: '100%' }}
+            region={mapRegion}
+            showsUserLocation={true}
+            onMarkerSelect={(event) => {
+              console.log(event.id);
+              if (!bottomSheetVisible) {
+                toggleBottomSheetView();
+              }
+            }}
+          >
 
-        {buildings ? buildings.map((building) => (
+            {buildings ? buildings.map((building) => (
 
-          <Marker onSelect={() => setSelectedBuilding(building)} coordinate={building.coordinate} title={building.title} description={building.abbreviation}>
+              <Marker onSelect={() => setSelectedBuilding(building)} coordinate={building.coordinate} title={building.title} description={building.abbreviation}>
 
-          </Marker>
+              </Marker>
 
-        ))
-          : null}
+            ))
+              : null}
 
 
-      </MapView>
-      <BottomSheet
-          visible={bottomSheetVisible}
-          //setting the visibility state of the bottom shee
-          onBackButtonPress={toggleBottomSheetView}
-          //Toggling the visibility state on the click of the back botton
-          onBackdropPress={toggleBottomSheetView}
+          </MapView>
+          <BottomSheet
+            visible={bottomSheetVisible}
+            //setting the visibility state of the bottom shee
+            onBackButtonPress={toggleBottomSheetView}
+            //Toggling the visibility state on the click of the back botton
+            onBackdropPress={toggleBottomSheetView}
           //Toggling the visibility state on the clicking out side of the sheet
-        >
-          {/*Bottom Sheet inner View*/}
-          <View style={mapStyles.bottomNavigationView}>
-            <Text>{selectedBuilding.title}</Text>
-            <View
-              style={{
-                flex: 1,
-                flexDirection: 'column',
-                justifyContent: 'space-between',
-              }}>
-              <Text
+          >
+            {/*Bottom Sheet inner View*/}
+            <View style={mapStyles.bottomNavigationView}>
+              <Text>{selectedBuilding.title}</Text>
+              <View
                 style={{
-                  textAlign: 'center',
-                  padding: 20,
-                  fontSize: 20,
+                  flex: 1,
+                  flexDirection: 'column',
+                  justifyContent: 'space-between',
                 }}>
-                Share Using
-              </Text>
-              <View style={{ flex: 1, flexDirection: 'row' }}>
-                <SocialIcon
-                  //Social Icon using react-native-elements
-                  type="twitter"
-                  //Type of Social Icon
-                  onPress={() => {
-                    //Action to perform on press of Social Icon
-                    toggleBottomSheetView();
-                    alert('twitter');
-                  }}
-                />
-                <SocialIcon
-                  type="gitlab"
-                  onPress={() => {
-                    toggleBottomSheetView();
-                    alert('gitlab');
-                  }}
-                />
-                <SocialIcon
-                  type="medium"
-                  onPress={() => {
-                    toggleBottomSheetView();
-                    alert('medium');
-                  }}
-                />
-                <SocialIcon
-                  type="facebook"
-                  onPress={() => {
-                    toggleBottomSheetView();
-                    alert('facebook');
-                  }}
-                />
-                <SocialIcon
-                  type="instagram"
-                  onPress={() => {
-                    toggleBottomSheetView();
-                    alert('instagram');
-                  }}
-                />
-              </View>
-              <View style={{ flex: 1, flexDirection: 'row' }}>
-                <SocialIcon
-                  type="facebook"
-                  onPress={() => {
-                    toggleBottomSheetView();
-                    alert('facebook');
-                  }}
-                />
-                <SocialIcon
-                  type="instagram"
-                  onPress={() => {
-                    toggleBottomSheetView();
-                    alert('instagram');
-                  }}
-                />
-                <SocialIcon
-                  type="gitlab"
-                  onPress={() => {
-                    toggleBottomSheetView();
-                    alert('gitlab');
-                  }}
-                />
-                <SocialIcon
-                  type="twitter"
-                  onPress={() => {
-                    toggleBottomSheetView();
-                    alert('twitter');
-                  }}
-                />
-                <SocialIcon
-                  type="medium"
-                  onPress={() => {
-                    toggleBottomSheetView();
-                    alert('medium');
-                  }}
-                />
+                <Text
+                  style={{
+                    textAlign: 'center',
+                    padding: 20,
+                    fontSize: 20,
+                  }}>
+                  Share Using
+                </Text>
+                <View style={{ flex: 1, flexDirection: 'row' }}>
+                  <SocialIcon
+                    //Social Icon using react-native-elements
+                    type="twitter"
+                    //Type of Social Icon
+                    onPress={() => {
+                      //Action to perform on press of Social Icon
+                      toggleBottomSheetView();
+                      alert('twitter');
+                    }}
+                  />
+                  <SocialIcon
+                    type="gitlab"
+                    onPress={() => {
+                      toggleBottomSheetView();
+                      alert('gitlab');
+                    }}
+                  />
+                  <SocialIcon
+                    type="medium"
+                    onPress={() => {
+                      toggleBottomSheetView();
+                      alert('medium');
+                    }}
+                  />
+                  <SocialIcon
+                    type="facebook"
+                    onPress={() => {
+                      toggleBottomSheetView();
+                      alert('facebook');
+                    }}
+                  />
+                  <SocialIcon
+                    type="instagram"
+                    onPress={() => {
+                      toggleBottomSheetView();
+                      alert('instagram');
+                    }}
+                  />
+                </View>
+                <View style={{ flex: 1, flexDirection: 'row' }}>
+                  <SocialIcon
+                    type="facebook"
+                    onPress={() => {
+                      toggleBottomSheetView();
+                      alert('facebook');
+                    }}
+                  />
+                  <SocialIcon
+                    type="instagram"
+                    onPress={() => {
+                      toggleBottomSheetView();
+                      alert('instagram');
+                    }}
+                  />
+                  <SocialIcon
+                    type="gitlab"
+                    onPress={() => {
+                      toggleBottomSheetView();
+                      alert('gitlab');
+                    }}
+                  />
+                  <SocialIcon
+                    type="twitter"
+                    onPress={() => {
+                      toggleBottomSheetView();
+                      alert('twitter');
+                    }}
+                  />
+                  <SocialIcon
+                    type="medium"
+                    onPress={() => {
+                      toggleBottomSheetView();
+                      alert('medium');
+                    }}
+                  />
+                </View>
               </View>
             </View>
-          </View>
-        </BottomSheet>
-    </View>
+          </BottomSheet>
+        </View>
+      )}
+    </FirebaseContext.Consumer>
   );
 }
 

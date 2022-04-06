@@ -4,14 +4,14 @@ import { Button } from "react-native-elements/dist/buttons/Button";
 import { styles } from "../Styles";
 import { createStackNavigator } from "@react-navigation/stack";
 import { useNavigation } from "@react-navigation/core";
-import { Divider } from "react-native-elements/dist/divider/Divider";
+import { Divider } from "react-native-elements/dist/divider/Divider"; 
+import { getFirebaseEvents } from "../EventClient";
+import { Cache } from "../cache";
+import FirebaseContext from "../FirebaseContext";
 
-const customData = require("../fake_data.json");
 const ListStack = createStackNavigator();
 
 export function ListView() {
-  const [open, setOpen] = useState(false);
-  const [value, setValue] = useState(null);
   const buildings = [
     { label: "TNRB", value: "TNRB" },
     { label: "JFSB", value: "JFSB" },
@@ -19,19 +19,24 @@ export function ListView() {
   const navigation = useNavigation();
 
   return (
-    <View style={styles.listContainer}>
-      <FlatList
-        data={customData}
-        renderItem={({ item }) => (
-          <TouchableWithoutFeedback onPress={() => navigation.navigate("EventDetailView", { item })}>
-            <View>
-              
-              <Text style={styles.eventListItem}>{item.eventName}</Text>
-              <Divider style={styles.listDivider}/>
-            </View>
-          </TouchableWithoutFeedback>
-        )}
-      />
-    </View>
+    <FirebaseContext.Consumer>
+      {value=> (
+        <View style={styles.listContainer}>
+          <FlatList
+            data={value}
+            renderItem={({ item }) => (
+              <TouchableWithoutFeedback
+                onPress={() => navigation.navigate("EventDetailView", { item })}>
+                <View>
+                  
+                  <Text style={styles.eventListItem}>{item.eventName}</Text>
+                  <Divider style={styles.listDivider}/>
+                </View>
+              </TouchableWithoutFeedback>
+            )}
+          />
+        </View>)
+      }
+    </FirebaseContext.Consumer>
   );
 }

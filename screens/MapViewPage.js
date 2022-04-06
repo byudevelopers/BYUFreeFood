@@ -15,24 +15,23 @@ export function MapViewPage() {
         latitudeDelta: 0.01,
         longitudeDelta: 0.01,
     });
-    const [bottomSheetVisible, setBottomSheetVisible] = useState(true);
 
+    const [bottomSheetVisible, setBottomSheetVisible] = useState(false);
     function toggleBottomSheetView() {
-        //Toggling the visibility state of the bottom sheet
-        console.log("Toggled nav view!!");
         setBottomSheetVisible(!bottomSheetVisible);
     };
 
-    console.log("Testing logs!");
+    const [selectedBuilding, setSelectedBuilding] = useState({ title: "", });
 
+    console.log("Testing logs!");
     return (
         <View style={styles.container}>
             <MapView
                 style={{ alignSelf: 'stretch', height: '100%' }}
                 region={mapRegion}
                 showsUserLocation={true}
-                onMarkerSelect={() => {
-
+                onMarkerSelect={(event) => {
+                    console.log(event.id);
                     if (!bottomSheetVisible) {
                         toggleBottomSheetView();
                     }
@@ -41,13 +40,12 @@ export function MapViewPage() {
 
                 {buildings ? buildings.map((building) => (
 
-                    <Marker coordinate={building.coordinate} title={building.title} description={building.abbreviation}>
+                    <Marker onSelect={() => setSelectedBuilding(building)} coordinate={building.coordinate} title={building.title} description={building.abbreviation}>
 
                     </Marker>
 
                 ))
                     : null}
-
 
             </MapView>
             <BottomSheet
@@ -60,6 +58,7 @@ export function MapViewPage() {
             >
                 {/*Bottom Sheet inner View*/}
                 <View style={mapStyles.bottomNavigationView}>
+                    <Text>{selectedBuilding.title}</Text>
                     <View
                         style={{
                             flex: 1,

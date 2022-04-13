@@ -43,9 +43,10 @@ export function AddEventView({ navigation }) {
     //  {label: 'JFSB', value: 'JFSB'}
     //];
     var todaysDate = new Date().getFullYear() + "-" + parseInt(new Date().getMonth()+1).toString().padStart(2, '0') + "-" + (new Date().getDate()).toString().padStart(2, '0');
+    const [currentDate, setCurrentDate] = useState(todaysDate);
     //var currentMonth = newDate().getMonth();
     
-
+    // TODO add "button" to save event - should read "save" on the top bar, on the right
     return (
       <View style={addEventStyles.page}>
         <TextInput style={[addEventStyles.textInput, addEventStyles.text]} placeholder="Title"/>
@@ -63,7 +64,7 @@ export function AddEventView({ navigation }) {
 
             style={[addEventStyles.calendar]}
             // Initially visible month. Default = now
-            current={todaysDate}
+            current={currentDate}
             // Minimum date that can be selected, dates before minDate will be grayed out. Default = undefined
             minDate={todaysDate}
             // Maximum date that can be selected, dates after maxDate will be grayed out. Default = undefined
@@ -71,9 +72,8 @@ export function AddEventView({ navigation }) {
             // Handler which gets executed on day press. Default = undefined
             onDayPress={day => {
               console.log('selected day', day);
-              
-              //var date = new Date().getFullYear() + "-" + parseInt(new Date().getMonth()+1) + "-" + new Date().getDate();
-              //console.log(date.toString());
+              // TODO figure out how to make the change appear on the screen
+              setCurrentDate(day);
             }}
             // Handler which gets executed on day long press. Default = undefined
             onDayLongPress={day => {
@@ -118,7 +118,9 @@ export function AddEventView({ navigation }) {
             }}
             // Enable the option to swipe between months. Default = false
             enableSwipeMonths={true}
+            // TODO add time
           />
+          
       </View>
     )
   }
@@ -147,7 +149,7 @@ export function AddEventView({ navigation }) {
     calendar: {
     }, 
     calendarTitle: {
-      //Add style for calendar title here
+      //Add style for calendar title here TODO change to fit the actual design
       marginTop: 100, //Arbitrary - change if needed
       fontSize: 28,
       //margin: "auto",

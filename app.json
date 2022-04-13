@@ -4,9 +4,9 @@
     "slug": "BYUFreeFood",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/icon.png",
+    "icon": "./assets/pizza.png",
     "splash": {
-      "image": "./assets/splash.png",
+      "image": "./assets/pizza.png",
       "resizeMode": "contain",
       "backgroundColor": "#ffffff"
     },
@@ -20,8 +20,9 @@
       "supportsTablet": true
     },
     "android": {
+      "package": "byufreefood.app",
       "adaptiveIcon": {
-        "foregroundImage": "./assets/adaptive-icon.png",
+        "foregroundImage": "./assets/pizza.png",
         "backgroundColor": "#FFFFFF"
       }
     },

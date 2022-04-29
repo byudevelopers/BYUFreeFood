@@ -53,6 +53,11 @@ export const styles = StyleSheet.create({
   },
   //End add event view
   // list view
+  eventListHeader: {
+    padding: 10,
+    fontSize: 24,
+    backgroundColor: "#fff",
+  },
   eventListItem: {
     padding: 10,
     backgroundColor: "#fff",

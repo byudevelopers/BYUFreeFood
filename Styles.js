@@ -29,6 +29,11 @@ export const styles = StyleSheet.create({
     flex: 1,
   },
   // list view
+  eventListHeader: {
+    padding: 10,
+    fontSize: 24,
+    backgroundColor: "#fff",
+  },
   eventListItem: {
     padding: 10,
     backgroundColor: "#fff",

@@ -1,18 +1,32 @@
 import { Text, StyleSheet } from "react-native";
 import { ScreenHeight, ScreenWidth } from "react-native-elements/dist/helpers";
 
-var byuBlue = "#151561";
+const byuBlue = "#151561";
+const lightBlue = "#ABC8ED";
+const white = "#fff";
 
 export const styles = StyleSheet.create({
-  //Add event view
-  text: {
-    
+  // map
+  mapMarker: {
+    backgroundColor: byuBlue,
+    height: 30,
+    borderRadius: 50,
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
   },
+  markerText: {
+    paddingHorizontal: 15,
+    color: white,
+  },
+
+  //Add event view
+  text: {},
   container: {
     flex: 1,
     backgroundColor: "#fff",
     alignItems: "center",
-    paddingTop: 20
+    paddingTop: 20,
   },
   header: {
     fontSize: 26,
@@ -23,13 +37,11 @@ export const styles = StyleSheet.create({
     padding: 10,
     marginRight: 15,
     marginLeft: 15,
-    marginTop: 5
+    marginTop: 5,
   },
   textInput: {
     flex: 1,
     borderBottomWidth: 1,
-    
-    
   },
   textBox: {
     flex: 1,
@@ -37,7 +49,7 @@ export const styles = StyleSheet.create({
     borderRadius: 10,
     marginTop: 20,
     marginBottom: 20,
-    paddingLeft: 5
+    paddingLeft: 5,
   },
   headerButton: {
     padding: 4,
@@ -45,11 +57,11 @@ export const styles = StyleSheet.create({
   dropdown: {
     width: 350,
     height: 30,
-    margin: 20
+    margin: 20,
   },
   datePicker: {
     backgroundColor: "#bb0000",
-    color: "#bb0000"
+    color: "#bb0000",
   },
   //End add event view
   // list view

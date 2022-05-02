@@ -14,8 +14,6 @@ import { getFirebaseEvents } from "../EventClient";
 import { Cache } from "../cache";
 import FirebaseContext from "../FirebaseContext";
 
-const ListStack = createStackNavigator();
-
 function findArrayLocation(date) {
   const today = new Date();
   return date.getDate() - today.getDate();
@@ -65,13 +63,13 @@ function makeDividers(FirebaseContext) {
         // date does not exist in database
         throw "Date does not exist";
       } else {
-        // date does exist in database
+        // date exists in database
         var date = FirebaseContext[i].timeDate.toDate();
         if (date != null) {
           let arrayLocation = findArrayLocation(date);
           if (arrayLocation < 0) {
             // is a past event
-            // should event be deleted?
+            // should this event be deleted?
           } else if (arrayLocation >= dataSortedByDate.length - 1) {
             // farther future event
             dataSortedByDate[dataSortedByDate.length - 1].data.push(

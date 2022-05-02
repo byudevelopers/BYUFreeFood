@@ -16,6 +16,11 @@ import FirebaseContext from "../FirebaseContext";
 
 const ListStack = createStackNavigator();
 
+function findArrayLocation(date) {
+  const today = new Date();
+  return date.getDate() - today.getDate();
+}
+
 function makeDividers(FirebaseContext) {
   // Add the weekdays twice so that if it is near the end of the week we won't access past the array length.
   // I thought this would be easier than doing maths
@@ -51,6 +56,8 @@ function makeDividers(FirebaseContext) {
   dataSortedByDate.push(fourdays);
   dataSortedByDate.push(future);
 
+  console.log("---");
+
   // for each event, check which section the event belongs in
   for (var i = 0; i < FirebaseContext.length; i++) {
     try {
@@ -61,19 +68,18 @@ function makeDividers(FirebaseContext) {
         // date does exist in database
         var date = FirebaseContext[i].timeDate.toDate();
         if (date != null) {
-          // calculate the time until the event in days
-          var difference_in_time = date.getTime() - now.getTime();
-          var difference_in_days = Math.floor(
-            difference_in_time / (1000 * 3600 * 24) + 1
-          );
-          if (difference_in_days <= dataSortedByDate.length - 2) {
-            // put event in the correct section data array
-            dataSortedByDate[difference_in_days].data.push(FirebaseContext[i]);
-          } else {
-            // put event in the future section data array
+          let arrayLocation = findArrayLocation(date);
+          if (arrayLocation < 0) {
+            // is a past event
+            // should event be deleted?
+          } else if (arrayLocation >= dataSortedByDate.length - 1) {
+            // farther future event
             dataSortedByDate[dataSortedByDate.length - 1].data.push(
               FirebaseContext[i]
             );
+          } else {
+            // date is soon
+            dataSortedByDate[arrayLocation].data.push(FirebaseContext[i]);
           }
         }
       }

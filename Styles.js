@@ -57,10 +57,12 @@ export const styles = StyleSheet.create({
     padding: 10,
     fontSize: 24,
     backgroundColor: "#fff",
+    fontFamily: 'OpenSans_400Regular',
   },
   eventListItem: {
     padding: 10,
     backgroundColor: "#fff",
+    fontFamily: 'OpenSans_400Regular',
   },
   listDivider: {
     height: 1,

@@ -15,12 +15,26 @@ import { MapViewPage } from "./screens/MapViewPage";
 import { getFirebaseEvents } from "./EventClient";
 import { Cache } from "./cache";
 import { LogBox } from "react-native";
-
+import { 
+  useFonts,
+  OpenSans_300Light,
+  OpenSans_300Light_Italic,
+  OpenSans_400Regular,
+  OpenSans_400Regular_Italic,
+  OpenSans_600SemiBold,
+  OpenSans_600SemiBold_Italic,
+  OpenSans_700Bold,
+  OpenSans_700Bold_Italic,
+  OpenSans_800ExtraBold,
+  OpenSans_800ExtraBold_Italic 
+} from '@expo-google-fonts/open-sans'
+import AppLoading from 'expo-app-loading';
 import FirebaseContext from "./FirebaseContext";
 
 const AppStack = createStackNavigator();
 const HomeTabs = createBottomTabNavigator();
 LogBox.ignoreLogs(["Setting a timer"]);
+
 
 export default class App extends React.Component {
   constructor(props) {
@@ -80,6 +94,13 @@ export default class App extends React.Component {
 }
 
 function Home() {
+  let [fontsLoaded] = useFonts({
+    OpenSans_400Regular,
+  });
+
+  if (!fontsLoaded) {
+    return <AppLoading />;
+  }
   return (
     <HomeTabs.Navigator
       // tabBarOptions was all that was needed to be added to the navigator component to make the icons have active tinting
